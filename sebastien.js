@@ -1,1 +1,0 @@
-console.log("First JS program on VS Code");
