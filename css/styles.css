@@ -1,0 +1,52 @@
+body {
+  background-color: #142e29;
+}
+
+.navigation-bar .row {
+  margin: 3vh;
+}
+.navigation-bar .row .button {
+  background-color: #142e29;
+  font-weight: bold;
+  border: none;
+  border-bottom-width: medium;
+  border-bottom-style: none;
+  border-bottom-color: currentcolor;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+
+.aboutus img {
+  width: 100%;
+}
+.overview {
+  margin: 23vh;
+}
+.overview h1 {
+  color: #fff;
+  text-align: center;
+}
+.overview p {
+  color: #fff;
+  text-align: center;
+}
+.overview .row .col-md-4 h1 {
+  font-size: 340%;
+  border-bottom: 4px solid #fff;
+}
+.overview .row .col-md-4 h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.container-fluid {
+  background-color: rgb(49, 49, 49);
+}
+
+.container-fluid .bottomRow .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
