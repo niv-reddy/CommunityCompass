@@ -1,0 +1,35 @@
+.box{
+    padding-top: 2%;
+    height: 1000px;
+    width: 1100px;
+    margin: auto;
+    background-color:#2c6259;
+    color: white;
+}
+.txtbox{
+    height: auto;
+    width: auto;
+    margin: 20px 10px 20px 10px;
+    background-color:#2b8103;
+}
+.txt{
+    padding-top: 2%;
+    height: auto;
+    width: auto;
+    margin: 40px 10px 10px 10px;
+    background-color:#09a83e;
+}
+.button{
+    background-color: #002a28;
+    color: white;
+    margin-left: 1%;
+    margin-right: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    height: 40px;
+    width: 50%;
+}
+.page{
+    background-color: #D2B48C;
+}
