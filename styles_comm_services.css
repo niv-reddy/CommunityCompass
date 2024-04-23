@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d8d2b8;
+}
+
+/* Horizontal Navigation Bar Styling */
+#Horizontal-Navigation-Bar {
+  display: flex;
+  background-color: #eeeeee;
+  align-items: center;
+  padding: 15px;
+}
+
+#Horizontal-Navigation-Bar img {
+  height: 50px; 
+  margin-right: 10px; 
+}
+
+#Horizontal-Navigation-Bar ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#Horizontal-Navigation-Bar li {
+  padding: 20px;
+}
+
+#Horizontal-Navigation-Bar li a {
+  display: block;
+  color: #34413c;
+  text-align: center;
+  padding: 0 20px;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+#Horizontal-Navigation-Bar li a:hover {
+  color: #13481d;
+}
+
+#Horizontal-Navigation-Bar li.right {
+  margin-left: auto;
+}
+
+
+/* Vertical Toolbar Styling */
+
+#Vertical-Toolbar {
+  margin-left: 15px;
+}
+
+#Vertical-Toolbar h2 {
+  color: #000000;
+  font-size: 34px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+#Vertical-Toolbar button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* Filter Header and Clear Button Styling */
+.filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.filters-header h3 {
+  margin: 10;
+  padding: 10;
+}
+
+.filters-header button {
+  padding: 5px 10px;
+  font-size: 16px;
+  width: 120px;
+}
+
+/* Filter Sections Styling */
+#Filters h3 {
+  padding-bottom: 5px;
+  margin-top: 20;
+  margin-bottom: 15px;
+}
+
+#Filters ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#Filters li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#Filters button {
+  padding: 8px 20px;
+  font-size: 14px;
+  margin-left: 10px;
+}
