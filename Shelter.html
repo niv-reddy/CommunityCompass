@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+  <title>Community Compass</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<html lang="en">
+  <body>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #d8d2b8;
+      }
+    </style>
+    <div id="Horizontal-Navigation-Bar">
+      <div>
+        <img
+          src="img/CC Embelm.png"
+          onclick="window.location.href='index.html'"
+        />
+      </div>
+      <ul>
+        <ul>
+          <li>
+            <button onclick="window.location.href='Shelter.html'">
+              Shelters
+            </button>
+          </li>
+          <li>
+            <button onclick="window.location.href='FoodBank.html'">
+              Food Banks
+            </button>
+          </li>
+          <li>
+            <button onclick="window.location.href='Employment.html'">
+              Employment
+            </button>
+          </li>
+          <li>
+            <button onclick="window.location.href='Healthcare'">
+              Healthcare
+            </button>
+          </li>
+          <li>
+            <button onclick="window.location.href='Calendar.html'">
+              Calendar
+            </button>
+          </li>
+        </ul>
+      </ul>
+    </div>
+    <div id="Vertical-Toolbar">
+      <h2 style="margin: 0">Community Shelters</h2>
+      <h4>Discover Your Haven for Rest and Safety</h4>
+      <div class="filters-container">
+        <div class="filters-header">
+          <h3>Filter By:</h3>
+          <button class="clear-button">Clear All</button>
+        </div>
+        <div id="Operating-Hours-Filters">
+          <h3>Operating Hours</h3>
+          <ul role="toolbar">
+            <li>
+              <button aria-setsize="4" aria-posinset="1">Open Now</button>
+            </li>
+            <li><button aria-setsize="4" aria-posinset="2">24 / 7</button></li>
+            <li>
+              <button aria-setsize="4" aria-posinset="3">Open Weekends</button>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Length Of Stay</h3>
+          <ul role="toolbar">
+            <li>
+              <button aria-setsize="4" aria-posinset="1">Short Term</button>
+            </li>
+            <li>
+              <button aria-setsize="4" aria-posinset="2">Long Term</button>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Demographic</h3>
+          <ul role="toolbar">
+            <li>
+              <button aria-setsize="4" aria-posinset="1">Women Only</button>
+            </li>
+            <li><button aria-setsize="4" aria-posinset="2">Youth</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,21 +1,13 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #d8d2b8;
-}
-
 /* Horizontal Navigation Bar Styling */
 #Horizontal-Navigation-Bar {
   display: flex;
-  background-color: #eeeeee;
   align-items: center;
   padding: 15px;
 }
 
 #Horizontal-Navigation-Bar img {
-  height: 50px; 
-  margin-right: 10px; 
+  height: 50px;
+  margin-right: 10px;
 }
 
 #Horizontal-Navigation-Bar ul {
@@ -35,7 +27,7 @@ body {
   color: #34413c;
   text-align: center;
   padding: 0 20px;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 20px;
 }
 
@@ -46,7 +38,6 @@ body {
 #Horizontal-Navigation-Bar li.right {
   margin-left: auto;
 }
-
 
 /* Vertical Toolbar Styling */
 

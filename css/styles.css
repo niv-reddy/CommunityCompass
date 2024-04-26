@@ -1,7 +1,128 @@
-body {
-  background-color: #142e29;
+/*------------------------------------*/
+/*resource*/
+#Horizontal-Navigation-Bar {
+  display: flex;
+  align-items: center;
+  padding: 15px;
 }
 
+#Horizontal-Navigation-Bar img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+#Horizontal-Navigation-Bar ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#Horizontal-Navigation-Bar li {
+  padding: 20px;
+}
+
+#Horizontal-Navigation-Bar button {
+  background: transparent;
+  border: none;
+  border-bottom-width: medium;
+  border-bottom-style: none;
+  border-bottom-color: currentcolor;
+  font-size: 23px;
+  border-bottom: 3px solid #000;
+  padding: 0;
+  margin: 0 2vw;
+}
+
+#Horizontal-Navigation-Bar li a:hover {
+  color: #13481d;
+}
+
+#Horizontal-Navigation-Bar li.right {
+  margin-left: auto;
+}
+
+/* Vertical Toolbar Styling */
+
+#Vertical-Toolbar {
+  margin-left: 15px;
+}
+
+#Vertical-Toolbar h2 {
+  color: #000000;
+  font-size: 34px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+#Vertical-Toolbar h4 {
+  margin: 0;
+  font-weight: lighter;
+  font-family: "Koh Santepheap", sans-serif;
+  font-size: 32px;
+  line-height: 40.63px;
+  text-align: left;
+}
+
+#Vertical-Toolbar button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  text-align: right;
+}
+
+/* Filter Header and Clear Button Styling */
+.filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-width: 250px;
+  width: 100%;
+  margin: 7vh 0vw;
+  border-bottom: 2px solid;
+}
+
+.filters-header h3 {
+  margin: 10;
+  padding: 10;
+}
+
+.filters-header button {
+  padding: 5px 10px;
+  font-size: 16px;
+  width: 120px;
+}
+
+/* Filter Sections Styling */
+#Filters h3 {
+  padding-bottom: 5px;
+  margin-top: 20;
+  margin-bottom: 15px;
+}
+
+#Filters ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#Filters li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#Filters button {
+  padding: 8px 20px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+/*------------------------------------*/
 .navigation-bar .row {
   margin: 3vh;
 }
