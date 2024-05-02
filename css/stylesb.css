@@ -1,14 +1,47 @@
 body {
-    background-color: #d8d2b8; /* Dark green background */
-    color: black; /* Black color for text */
-    font-family: Arial, sans-serif; /* Sets the font for the webpage */
-    margin: 0; /* Removes default margin */
-    padding: 20px; /* Adds padding to avoid text sticking to the edges */
+    background-color: #d8d2b8;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Adjust this value as necessary */
+}
+
+.info-section, .form-section {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    overflow-y: auto;
+    max-height: 550px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for better visual separation */
 }
 
 h1 {
-    font-size: 48px; /* Large size for the title */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-    text-align: left; /* Aligns the text to the left */
+    font-size: 48px;
+    margin: 0 0 20px 0;
+    padding: 0;
+    text-align: left;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
 }
