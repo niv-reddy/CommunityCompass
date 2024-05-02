@@ -39,9 +39,19 @@
           <input type="text" id="input-box" placeholder="Search..." autocomplete="off"
             style="height: 40px; width: 400px; padding: 0 10px; font-size: 16px; border: none">
         </div>
-        <div class="result-box" style="z-index: 1050;">
+        <div class="result-box" style="z-index: 1050; max-height: 200px; overflow-y: auto; background-color: #d8d2b8; padding: 10px;">
+          <style>
+            .result-box ul {
+              border-top: 1px solid #999;
+              padding: 10px;
+              margin: 0;
+              list-style-type: none;
+            }
+          </style>
         </div>
       </div>
+      
+      
 
     </div>
     <div class="AboutUsButton" onclick="window.location.href='AboutUs.html'" style="
