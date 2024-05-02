@@ -171,7 +171,7 @@ public class Main {
                     valid_services.get(index).name          = resultSet.getString("name");
                     valid_services.get(index).location      = resultSet.getString("location");
                     valid_services.get(index).description   = resultSet.getString("description");
-                    valid_services.get(index).phone         = resultSet.getString("name");
+                    valid_services.get(index).phone         = resultSet.getString("phone");
                     valid_services.get(index).opening_time  = resultSet.getString("opening");
                     valid_services.get(index).closing_time  = resultSet.getString("closing");
                 }
@@ -240,7 +240,7 @@ public class Main {
     private static void write_ranked_service_list_to_output(ArrayList<Service> services) {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(ranked_service_output_file))) {
 
-            //Write service properties seperated to output:
+            //Write service properties seperated by commas to output:
             for(Service s: services) {
                 bw.write(s.name + ",");
                 bw.write(s.location + ",");
