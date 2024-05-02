@@ -5,9 +5,10 @@ import java.net.*;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+//Requires a  jdbc driver
+
 public class Main {
     /*
-
     (1) - First line of service_filter_input.txt contains service type to be filtered. - sheltersac, employmentsac, eventsac, foodsac
     (2) - Second Line specifies whether services must be open now. If true then set to 'opennow', otherwise 'anytime'.
     (3) - Third and following lines contain filter types and filter value seperated by a comma e.g:
