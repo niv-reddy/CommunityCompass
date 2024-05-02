@@ -42,7 +42,7 @@ inputBox.onkeyup = function () {
 function display(result) {
     const content = result.map((list) => {
         const url = generatePageURL(list); 
-        return "<li style='list-style: none; border-radius: 10px; padding: 10px; cursor: pointer; background-color: #d8d2b8; margin: 0;' onclick='window.location.href=\"" + url + "\"'>" + list + "</li>";     
+        return "<li style='list-style: none; border-radius: 10px; padding: 10px; cursor: pointer; background-color: #ffff; margin: 0;' onclick='window.location.href=\"" + url + "\"'>" + list + "</li>";     
     }).join('');
 
     resultsBox.innerHTML = "<ul style='border-top: 1px solid #999; padding: 10px; margin: 0; list-style-type: none;'>" + content + "</ul>";
