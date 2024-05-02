@@ -2,10 +2,11 @@ import java.io.*;
 import java.util.*;
 import java.sql.*;
 import java.net.*;
+import org.json.*;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-//Requires a  jdbc driver
+//Requires a  jdbc driver and Org.Json
 
 public class Main {
     /*
@@ -58,17 +59,19 @@ public class Main {
         String phone;
         String opening_time;
         String closing_time;
-        int distance_from_user_in_miles;
+        String distance_from_user_in_miles;
     }
 
     //Custom service comparator:
     static class SortByDistance implements Comparator<Service> {
         public int compare(Service s1, Service s2)
         {
-            if(s1.distance_from_user_in_miles == s2.distance_from_user_in_miles) {
+            float d1 = Float.parseFloat(s1.distance_from_user_in_miles);
+            float d2 = Float.parseFloat(s2.distance_from_user_in_miles);
+            if(d1 == d2) {
                 return 0;
             }
-            return s1.distance_from_user_in_miles < s2.distance_from_user_in_miles ? 1 : -1;
+            return d1 > d2 ? 1 : -1;
         }
     }
 
@@ -187,60 +190,76 @@ public class Main {
         return valid_services;
     }
 
-    /* Calculates distance of each service relative to user using the Google Maps API */
+    // Calculates distance of each service relative to user using the Google Maps API
     private static ArrayList<Service> get_service_distance_from_user(ArrayList<Service> services, String user_location) {
-        /* String destinations = URLEncoder.encode(user_location, "UTF-8");
-        for(Service s: services) {
-
-        }
         try {
 
             // Construct API request URL
-            String destinations = URLEncoder.encode(user_location, "UTF-8");
-            String origin = URLEncoder.encode(user_location, "UTF-8");
-            String units = "imperial";
+            String destinations = "";
+            for (Service s : services) {
+                destinations += URLEncoder.encode(s.location, "UTF-8") + '|';
+            }
+
+            //Remove extraneous '|':
+            destinations = destinations.substring(0, destinations.length() - 1);
+            user_location = URLEncoder.encode(user_location, "UTF-8");
+            String unit = "imperial";
             String api_key = "AIzaSyAmjnQQ3pDlKtbmuNqZKQBYTJE3wbgG2RA";
+
             String url_string = "https://maps.googleapis.com/maps/api/distancematrix/json" +
                                 "?destinations="    + destinations  +
-                                "&origins="         + origin        +
-                                "&units="           + units         +
+                                "&origins="         + user_location +
+                                "&units="           + unit          +
                                 "&key="             + api_key;
             URL url = new URL(url_string);
 
-            // Create a connection
+            // Create connection with Google Distance Matrix API:
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
-            // Read the response
+            //Loading response from API:
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            StringBuilder response = new StringBuilder();
+            String response = "";
             String line;
             while ((line = reader.readLine()) != null) {
-                response.append(line);
+                response += line;
             }
             reader.close();
 
-            // Parse the JSON response
-            JSONObject jsonResponse = new JSONObject(response.toString());
-            JSONArray rows = jsonResponse.getJSONArray("rows");
-            JSONObject elements = rows.getJSONObject(0).getJSONArray("elements").getJSONObject(0);
-            String distance = elements.getJSONObject("distance").getString("text");
+            //Parsing JSON response and loading distance metric into service list:
+           load_distance_into_service_list(services, response);
 
-            // Print the distance in miles
-            System.out.println("Distance: " + distance);
-
-            // Close the connection
+            // Closing Distance Matrix API connection:
             connection.disconnect();
         } catch (IOException e) {
             e.printStackTrace();
-        } */
+        }
+        return services;
+    }
+
+    //Parses JSON response and loads distance metric into service list:
+    private static ArrayList<Service> load_distance_into_service_list(ArrayList<Service> services, String response) {
+        JSONObject json_response = new JSONObject(response);
+        JSONArray json_rows = json_response.getJSONArray("rows");
+        JSONArray json_elements = json_rows.getJSONObject(0).getJSONArray("elements");
+
+        /*Iterating through elements of the response - each element contains a distance, duration and status
+          field associated with each possible service destination */
+        for (int i = 0; i < json_elements.length(); i++) {
+            JSONObject element = json_elements.getJSONObject(i);
+            String distance = element.getJSONObject("distance").getString("text");
+
+            //Removing " mi" suffix:
+            distance = distance.substring(0, distance.length() - 3);
+            services.get(i).distance_from_user_in_miles = distance;
+        }
         return services;
     }
 
     private static void write_ranked_service_list_to_output(ArrayList<Service> services) {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(ranked_service_output_file))) {
 
-            //Write service properties seperated by commas to output:
+            //Write service properties seperated by '|' to output:
             for(Service s: services) {
                 bw.write(s.name + "|");
                 bw.write(s.location + "|");
@@ -269,8 +288,8 @@ public class Main {
         //Generating an unsorted list of services that match user filters:
         ArrayList<Service> services = get_valid_services(filters, service_type, open_now);
 
-        //Calculating relative distance between user and services:
-        String user_location = "";
+        //Calculating distance between user and services:
+        String user_location = "2500 American River Drive, Sacramento, California, USA";
         get_service_distance_from_user(services, user_location);
 
         //Sorting service list by distance relative to user:
