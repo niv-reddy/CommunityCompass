@@ -242,12 +242,12 @@ public class Main {
 
             //Write service properties seperated by commas to output:
             for(Service s: services) {
-                bw.write(s.name + ",");
-                bw.write(s.location + ",");
-                bw.write(s.description + ",");
-                bw.write(s.phone + ",");
-                bw.write(s.opening_time + ",");
-                bw.write(s.closing_time + ",");
+                bw.write(s.name + "|");
+                bw.write(s.location + "|");
+                bw.write(s.description + "|");
+                bw.write(s.phone + "|");
+                bw.write(s.opening_time + "|");
+                bw.write(s.closing_time + "|");
                 bw.write(s.distance_from_user_in_miles + " miles\n");
             }
         } catch (IOException e) {
