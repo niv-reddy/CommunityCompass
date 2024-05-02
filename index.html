@@ -35,15 +35,31 @@
           " src="img/SCCLogo.PNG" />
       </div>
 
-      <div class="search-box" style="position: absolute; top: 30px; right: 2%;">
+      <div class="search-box" style="position: absolute; top: 30px; right: 2%; z-index: 1050;">
         <div class="row">
-            <input type="text" id="input-box" placeholder="Search..." autocomplete="off"
-            style="height: 40px; width: 400px; padding: 0 10px; font-size: 16px;">
+          <input type="text" id="input-box" placeholder="Search..." autocomplete="off"
+            style="height: 40px; width: 400px; padding: 0 10px; font-size: 16px; border: none">
+        </div>
+        <div class="result-box" style="z-index: 1050;">
+          <ul style="border-top: 1px solid #999; padding: 15px 10px;">
+            <li style="list-style: none; border-radius: 3px; padding: 15px 10px; cursor: pointer; background-color: #fff;">
+              Food Banks</li>
+            <li style="list-style: none; border-radius: 3px; cursor: pointer; padding: 15px 10px; background-color: #fff;">
+              Shelter</li>
+            <li style="list-style: none; border-radius: 3px; cursor: pointer; padding: 15px 10px; background-color: #fff;">
+              Employment</li>
+            <li style="list-style: none; border-radius: 3px; cursor: pointer; padding: 15px 10px; background-color: #fff;">
+              Health Care</li>
+            <li style="list-style: none; border-radius: 3px; cursor: pointer; padding: 15px 10px; background-color: #fff;">
+               Contact Us</li>
+            <li style="list-style: none; border-radius: 3px; cursor: pointer; padding: 15px 10px; background-color: #fff;">
+              About Us</li>
+          </ul>
         </div>
       </div>
 
-      </div>
-      <div class="AboutUsButton" onclick="window.location.href='AboutUs.html'" style="
+    </div>
+    <div class="AboutUsButton" onclick="window.location.href='AboutUs.html'" style="
           right: 35%;
           top: 26px;
           position: absolute;
@@ -53,9 +69,9 @@
           font-weight: 400;
           word-wrap: break-word;
         ">
-        About Us
-      </div>
-      <div class="ContactUsButton" onclick="window.location.href='contact.html'" style="
+      About Us
+    </div>
+    <div class="ContactUsButton" onclick="window.location.href='contact.html'" style="
           width: 168px;
           height: 33px;
           right: 47%;
@@ -67,9 +83,9 @@
           font-weight: 400;
           word-wrap: break-word;
         ">
-        Contact Us
-      </div>
-      <div class="ContactUsButton" onclick="window.location.href='calendar.html'" style="
+      Contact Us
+    </div>
+    <div class="ContactUsButton" onclick="window.location.href='calendar.html'" style="
           width: 134px;
           height: 34px;
           right: 64%;
@@ -81,30 +97,30 @@
           font-weight: 400;
           word-wrap: break-word;
         ">
-        Calendar
-      </div>
+      Calendar
     </div>
   </div>
-  <div class="container">
-    <img class="MainPageImg" style="
+</div>
+<div class="container">
+  <img class="MainPageImg"  style="
         width: 100%;
         height: 660px;
         left: 0px;
         top: 101px;
         position: absolute;
       " src="img/SacBackrgound2.webp" />
-  </div>
+</div>
 
-  <div class="container" style="display: flex; align-items: center; justify-content: center">
-    <div class="row" style="position: absolute; top: 900px">
-      <div class="col-md-6" style="padding-right: 20px; position: relative">
-        <img src="img/Shelter.jpg" style="
+<div class="container" style="display: flex; align-items: center; justify-content: center">
+  <div class="row" style="position: absolute; top: 900px">
+    <div class="col-md-6" style="padding-right: 20px; position: relative">
+      <img src="img/Shelter.jpg" style="
             width: 20vw; /* Adjusted to use full column width */
             height: auto;
             display: block; /* Ensures no extra space on sides */
             margin-bottom: 8px; /* Space between image and button */
           " />
-        <button class="rsc-btn" style="
+      <button class="rsc-btn" style="
             width: 200px;
             height: 50px;
             line-height: 50px;
@@ -120,26 +136,26 @@
             margin: 0 auto; /* Centers the button horizontally */
             margin-bottom: 8px; /* Space between button and paragraph */
           ">
-          SHELTER
-        </button>
-        <p style="
+        SHELTER
+      </button>
+      <p style="
             text-align: center;
             width: 100%; /* Full width to align text properly */
           ">
-          Find available shelters in Sacramento, detailing locations and types
-          of accommodations for homeless individuals. It aims to connect those
-          in need with safe and appropriate shelter options, focusing on
-          providing immediate housing solutions.
-        </p>
-      </div>
-      <div class="col-md-6" style="padding-right: 20px; position: relative">
-        <img src="img/Shelter.jpg" style="
+        Find available shelters in Sacramento, detailing locations and types
+        of accommodations for homeless individuals. It aims to connect those
+        in need with safe and appropriate shelter options, focusing on
+        providing immediate housing solutions.
+      </p>
+    </div>
+    <div class="col-md-6" style="padding-right: 20px; position: relative">
+      <img src="img/Shelter.jpg" style="
             width: 20vw; /* Adjusted to use full column width */
             height: auto;
             display: block; /* Ensures no extra space on sides */
             margin-bottom: 8px; /* Space between image and button */
           " />
-        <button class="rsc-btn" style="
+      <button class="rsc-btn" style="
             width: 200px;
             height: 50px;
             line-height: 50px;
@@ -155,31 +171,31 @@
             margin: 0 auto; /* Centers the button horizontally */
             margin-bottom: 8px; /* Space between button and paragraph */
           ">
-          SHELTER
-        </button>
-        <p style="
+        SHELTER
+      </button>
+      <p style="
             text-align: center;
             width: 100%; /* Full width to align text properly */
           ">
-          Find available shelters in Sacramento, detailing locations and types
-          of accommodations for homeless individuals. It aims to connect those
-          in need with safe and appropriate shelter options, focusing on
-          providing immediate housing solutions.
-        </p>
-      </div>
+        Find available shelters in Sacramento, detailing locations and types
+        of accommodations for homeless individuals. It aims to connect those
+        in need with safe and appropriate shelter options, focusing on
+        providing immediate housing solutions.
+      </p>
     </div>
   </div>
+</div>
 
-  <div class="container" style="display: flex; align-items: center; justify-content: center">
-    <div class="row" style="position: absolute; top: 1300px">
-      <div class="col-md-6" style="padding-right: 20px; position: relative">
-        <img src="img/Shelter.jpg" style="
+<div class="container" style="display: flex; align-items: center; justify-content: center">
+  <div class="row" style="position: absolute; top: 1300px">
+    <div class="col-md-6" style="padding-right: 20px; position: relative">
+      <img src="img/Shelter.jpg" style="
             width: 20vw; /* Adjusted to use full column width */
             height: auto;
             display: block; /* Ensures no extra space on sides */
             margin-bottom: 8px; /* Space between image and button */
           " />
-        <button class="rsc-btn" style="
+      <button class="rsc-btn" style="
             width: 200px;
             height: 50px;
             line-height: 50px;
@@ -195,26 +211,26 @@
             margin: 0 auto; /* Centers the button horizontally */
             margin-bottom: 8px; /* Space between button and paragraph */
           ">
-          SHELTER
-        </button>
-        <p style="
+        SHELTER
+      </button>
+      <p style="
             text-align: center;
             width: 100%; /* Full width to align text properly */
           ">
-          Find available shelters in Sacramento, detailing locations and types
-          of accommodations for homeless individuals. It aims to connect those
-          in need with safe and appropriate shelter options, focusing on
-          providing immediate housing solutions.
-        </p>
-      </div>
-      <div class="col-md-6" style="padding-right: 20px; position: relative">
-        <img src="img/Shelter.jpg" style="
+        Find available shelters in Sacramento, detailing locations and types
+        of accommodations for homeless individuals. It aims to connect those
+        in need with safe and appropriate shelter options, focusing on
+        providing immediate housing solutions.
+      </p>
+    </div>
+    <div class="col-md-6" style="padding-right: 20px; position: relative">
+      <img src="img/Shelter.jpg" style="
             width: 20vw; /* Adjusted to use full column width */
             height: auto;
             display: block; /* Ensures no extra space on sides */
             margin-bottom: 8px; /* Space between image and button */
           " />
-        <button class="rsc-btn" style="
+      <button class="rsc-btn" style="
             width: 200px;
             height: 50px;
             line-height: 50px;
@@ -230,23 +246,23 @@
             margin: 0 auto; /* Centers the button horizontally */
             margin-bottom: 8px; /* Space between button and paragraph */
           ">
-          SHELTER
-        </button>
-        <p style="
+        SHELTER
+      </button>
+      <p style="
             text-align: center;
             width: 100%; /* Full width to align text properly */
           ">
-          Find available shelters in Sacramento, detailing locations and types
-          of accommodations for homeless individuals. It aims to connect those
-          in need with safe and appropriate shelter options, focusing on
-          providing immediate housing solutions.
-        </p>
-      </div>
+        Find available shelters in Sacramento, detailing locations and types
+        of accommodations for homeless individuals. It aims to connect those
+        in need with safe and appropriate shelter options, focusing on
+        providing immediate housing solutions.
+      </p>
     </div>
   </div>
+</div>
 
-  <!-- Visual Divider -->
-  <div class="Divider" style="
+<!-- Visual Divider -->
+<div class="Divider" style="
       width: 100%;
       height: 106px;
       left: -5px;
@@ -261,22 +277,22 @@
       );
     "></div>
 
-  <!-- Footer Section -->
-  <div class="Footer" style="
+<!-- Footer Section -->
+<div class="Footer" style="
       width: 100%;
       height: 30vh;
       top: 1951px;
       position: absolute;
       background: #292929;
     ">
-    <div class="CcLogo" style="
+  <div class="CcLogo" style="
         width: 706px;
         height: 134.61px;
         left: 104px;
         top: 30px;
         position: absolute;
       ">
-      <div class="CommunityCompass" style="
+    <div class="CommunityCompass" style="
           width: 601px;
           height: 81px;
           left: 105px;
@@ -289,17 +305,17 @@
           font-weight: 700;
           word-wrap: break-word;
         ">
-        Community Compass
-      </div>
-      <img class="CcEmbelm" style="
+      Community Compass
+    </div>
+    <img class="CcEmbelm" style="
           width: 130px;
           height: 134.61px;
           left: 0px;
           top: 0px;
           position: absolute;
         " src="img/SCCLogo.PNG" />
-    </div>
-    <div class="ContactUs" onclick="window.location.href = 'contact.html'" style="
+  </div>
+  <div class="ContactUs" onclick="window.location.href = 'contact.html'" style="
         left: 897px;
         top: 134px;
         position: absolute;
@@ -310,9 +326,9 @@
         font-weight: 400;
         word-wrap: break-word;
       ">
-      Contact Us
-    </div>
-    <div class="AboutUs" onclick="window.location.href = 'AboutUs.html'" style="
+    Contact Us
+  </div>
+  <div class="AboutUs" onclick="window.location.href = 'AboutUs.html'" style="
         left: 909px;
         top: 55px;
         position: absolute;
@@ -323,9 +339,9 @@
         font-weight: 400;
         word-wrap: break-word;
       ">
-      About Us
-    </div>
-    <div class="Resources" style="
+    About Us
+  </div>
+  <div class="Resources" style="
         left: 1150px;
         top: 15px;
         position: absolute;
@@ -336,9 +352,9 @@
         font-weight: 400;
         word-wrap: break-word;
       ">
-      Resources
-    </div>
-    <div class="FoodBank" onclick="window.location.href = 'FoodBank.html'" style="
+    Resources
+  </div>
+  <div class="FoodBank" onclick="window.location.href = 'FoodBank.html'" style="
         left: 1150px;
         top: 97px;
         position: absolute;
@@ -349,9 +365,9 @@
         font-weight: 300;
         word-wrap: break-word;
       ">
-      Food Bank
-    </div>
-    <div class="Shelter" onclick="window.location.href = 'Shelter.html'" style="
+    Food Bank
+  </div>
+  <div class="Shelter" onclick="window.location.href = 'Shelter.html'" style="
         left: 1150px;
         top: 64px;
         position: absolute;
@@ -362,9 +378,9 @@
         font-weight: 300;
         word-wrap: break-word;
       ">
-      Shelter
-    </div>
-    <div class="Employment" onclick="window.location.href = 'Employment.html'" style="
+    Shelter
+  </div>
+  <div class="Employment" onclick="window.location.href = 'Employment.html'" style="
         left: 1150px;
         top: 130px;
         position: absolute;
@@ -375,9 +391,9 @@
         font-weight: 300;
         word-wrap: break-word;
       ">
-      Employment
-    </div>
-    <div class="HealthCare" onclick="window.location.href = 'Healthcare.html'" style="
+    Employment
+  </div>
+  <div class="HealthCare" onclick="window.location.href = 'Healthcare.html'" style="
         left: 1150px;
         top: 163px;
         position: absolute;
@@ -388,9 +404,9 @@
         font-weight: 300;
         word-wrap: break-word;
       ">
-      Health Care
-    </div>
-    <div class="Calendar" onclick="window.location.href = 'calendar.html'" style="
+    Health Care
+  </div>
+  <div class="Calendar" onclick="window.location.href = 'calendar.html'" style="
         left: 1150px;
         top: 196px;
         position: absolute;
@@ -401,7 +417,7 @@
         font-weight: 300;
         word-wrap: break-word;
       ">
-      Calendar
-    </div>
+    Calendar
   </div>
+</div>
 </div>
