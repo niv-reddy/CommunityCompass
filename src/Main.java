@@ -9,17 +9,17 @@ import java.time.format.DateTimeFormatter;
 
 public class Main {
     /*
-    (1) - First line of service_filter_input.txt contains service type to be filtered. - sheltersac, employmentsac, eventsac, foodsac
+    (1) - First line of service_filter_input.txt contains service type to be filtered. - shelter, employment, event, food
     (2) - Second Line specifies whether services must be open now. If true then set to 'opennow', otherwise 'anytime'.
     (3) - Third and following lines contain filter types and filter value seperated by a comma e.g:
 
-        sheltersac
+        shelter
         opennow
         filter,1
 
         ALTERNATIVELY AS AN EXAMPLE:
 
-        employmentsac
+        employment
         anytime
         filter,0
 
