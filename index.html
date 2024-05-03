@@ -8,6 +8,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <!-- Banner Section -->
+
+<div class="bannerSection">
+  <video autoplay loop muted playsinline style="max-width: 100vw">
+    <source src="gif/banner.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
 <header style="background-color: white">
   <div
     class="header-container"
@@ -16,11 +23,11 @@
     <div
       class="header-column"
       onclick="window.location.href='index.html'"
-      style="cursor: pointer"
+      style="cursor: pointer; flex: 1"
     >
       <img
         class="CcEmbelm"
-        style="width: 75px; height: 77.66px; flex: 1"
+        style="width: 75px; height: 77.66px"
         src="img/SCCLogo.PNG"
       />
     </div>
@@ -135,29 +142,6 @@
     </div>
   </div>
 </header>
-<div class="bannerSection">
-  <img
-    class="MainPageImg"
-    style="width: 100%; height: 81vh"
-    src="img/SacBackrgound2.webp"
-  />
-</div>
-
-<!-- Visual Divider -->
-<div
-  class="Divider"
-  style="
-    width: 100%;
-    height: 106px;
-    background: linear-gradient(
-      90deg,
-      #002009 0%,
-      #105624 30%,
-      #228f41 62%,
-      #32c75c 93%
-    );
-  "
-></div>
 <style>
   body {
     background-color: #d8d2b8;
@@ -355,7 +339,9 @@
         margin-left: 10vw; /* Add some padding around the columns */
         display: flex;
         align-items: center;
+        cursor: pointer;
       "
+      onclick="window.location.href='index.html'"
     >
       <img
         class="CcEmbelm"
@@ -375,6 +361,7 @@
         flex: 0.2; /* Each column takes equal space */
         display: flex;
         align-items: center;
+        cursor: pointer;
       "
       onclick="window.location.href='index.html'"
     >
@@ -571,6 +558,7 @@
           font-weight: 400;
           word-wrap: break-word;
           margin: 2vh 0;
+          cursor: pointer;
         "
       >
         Contact Us
@@ -586,6 +574,7 @@
           font-weight: 400;
           word-wrap: break-word;
           margin: 2vh 0;
+          cursor: pointer;
         "
       >
         About Us

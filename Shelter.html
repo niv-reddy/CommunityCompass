@@ -1,96 +1,640 @@
 <!DOCTYPE html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Community Compass</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <html lang="en">
   <body>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #d8d2b8;
-      }
-    </style>
-    <div id="Horizontal-Navigation-Bar">
-      <div>
-        <img
-          src="img/CC Embelm.png"
-          onclick="window.location.href='index.html'"
-        />
+    <header>
+      <div class="header-container">
+        <div class="header-column">
+          <img
+            src="img/CC Embelm.png"
+            onclick="window.location.href='index.html'"
+          />
+        </div>
+        <div
+          class="header-column"
+          onclick="window.location.href='Shelter.html'"
+        >
+          Shelters
+        </div>
+        <div
+          class="header-column"
+          onclick="window.location.href='FoodBank.html'"
+        >
+          Food Banks
+        </div>
+        <div
+          class="header-column"
+          onclick="window.location.href='Employment.html'"
+        >
+          Employment
+        </div>
+        <div
+          class="header-column"
+          onclick="window.location.href='Healthcare.html'"
+        >
+          Healthcare
+        </div>
+        <div
+          class="header-column"
+          onclick="window.location.href='Calendar.html'"
+        >
+          Calendar
+        </div>
+        <div class="header-column">
+          <div class="row">
+            <input
+              type="text"
+              id="input-box"
+              placeholder="Search..."
+              autocomplete="off"
+              style="
+                height: 40px;
+                width: 20vw;
+                padding: 0 10px;
+                font-size: 16px;
+                border: none;
+              "
+            />
+          </div>
+          <div
+            class="result-box"
+            style="
+              z-index: 1050;
+              max-height: 200px;
+              overflow-y: auto;
+              background-color: #fff;
+              padding: 10px;
+            "
+          >
+            <style>
+              .result-box ul {
+                border-top: 1px solid #ffff;
+                padding: 10px;
+                margin: 0;
+                list-style-type: none;
+              }
+            </style>
+          </div>
+        </div>
       </div>
-      <ul>
-        <ul>
-          <li>
-            <button onclick="window.location.href='Shelter.html'">
-              Shelters
-            </button>
-          </li>
-          <li>
-            <button onclick="window.location.href='FoodBank.html'">
-              Food Banks
-            </button>
-          </li>
-          <li>
-            <button onclick="window.location.href='Employment.html'">
-              Employment
-            </button>
-          </li>
-          <li>
-            <button onclick="window.location.href='Healthcare'">
-              Healthcare
-            </button>
-          </li>
-          <li>
-            <button onclick="window.location.href='Calendar.html'">
-              Calendar
-            </button>
-          </li>
-        </ul>
-      </ul>
-    </div>
-    <div id="Vertical-Toolbar">
-      <h2 style="margin: 0">Community Shelters</h2>
+    </header>
+    <div id="banner">
+      <h2>Community Shelters</h2>
       <h4>Discover Your Haven for Rest and Safety</h4>
-      <div class="filters-container">
-        <div class="filters-header">
-          <h3>Filter By:</h3>
-          <button class="clear-button">Clear All</button>
+    </div>
+
+    <div class="container" style="margin: 5vh 3vw">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="filters-container">
+            <div class="filters-header">
+              <h3>Filter By:</h3>
+              <button class="clear-button">Clear All</button>
+            </div>
+            <div id="Operating-Hours-Filters">
+              <h3>Sort By</h3>
+              <ul role="toolbar" style="list-style-type: none">
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked />
+                    <span></span> Relevancy
+                  </label>
+                </li>
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" />
+                    <span></span> Closest
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div id="Operating-Hours-Filters">
+              <h3>Operating Hours</h3>
+              <ul role="toolbar" style="list-style-type: none">
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked />
+                    <span></span> Open Now
+                  </label>
+                </li>
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" />
+                    <span></span> 24 / 7
+                  </label>
+                </li>
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" />
+                    <span></span> Open Weekends
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>Length Of Stay</h3>
+              <ul role="toolbar" style="list-style-type: none">
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked />
+                    <span></span> Open Now
+                  </label>
+                </li>
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" />
+                    <span></span> 24 / 7
+                  </label>
+                </li>
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" />
+                    <span></span> Open Weekends
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>Demographic</h3>
+              <ul role="toolbar" style="list-style-type: none">
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked />
+                    <span></span> Women-only
+                  </label>
+                </li>
+                <li>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" />
+                    <span></span> Youth
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div id="Operating-Hours-Filters">
-          <h3>Operating Hours</h3>
-          <ul role="toolbar">
-            <li>
-              <button aria-setsize="4" aria-posinset="1">Open Now</button>
-            </li>
-            <li><button aria-setsize="4" aria-posinset="2">24 / 7</button></li>
-            <li>
-              <button aria-setsize="4" aria-posinset="3">Open Weekends</button>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3>Length Of Stay</h3>
-          <ul role="toolbar">
-            <li>
-              <button aria-setsize="4" aria-posinset="1">Short Term</button>
-            </li>
-            <li>
-              <button aria-setsize="4" aria-posinset="2">Long Term</button>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3>Demographic</h3>
-          <ul role="toolbar">
-            <li>
-              <button aria-setsize="4" aria-posinset="1">Women Only</button>
-            </li>
-            <li><button aria-setsize="4" aria-posinset="2">Youth</button></li>
-          </ul>
+        <div class="col-md-9" style="padding: 4vw">
+          <div class="container">
+            <div class="card">
+              <div class="row">
+                <div class="col-md-8">
+                  <h4 class="card-title mt-2">Title</h4>
+                  <p>
+                    Description: A placeholder in web development is text shown
+                    in an input field to indicate the expected type of data. It
+                    is displayed before any input is entered and disappears when
+                    the user starts typing. This helps guide users on what
+                    information to enter, enhancing usability and form
+                    efficiency.
+                  </p>
+                  <button class="btn btn-success">Read More</button>
+                </div>
+                <div class="col-md-4">
+                  <h4 class="info">Next Steps:</h4>
+                  <span class="result-next-step-item"
+                    >Call
+                    <a
+                      href="tel:916-854-4426"
+                      class="activity-log connections-log"
+                      data-program-key="ahJzfnNlYXJjaGJlcnRoYS1ocmRyFAsSB1Byb2dyYW0YgIDQyp6snwgM"
+                      data-activity-type="click phone number"
+                      data-activity-data="916-999-9999"
+                      data-bgq-log-type="click_contact_prg_card"
+                      data-bgq-user_sql_id="None"
+                      data-bgq-user_urlsafe_key_deprecated="None"
+                      data-bgq-contact_method="phone"
+                      data-bgq-contact_value="916-854-4426"
+                      data-bgq-contact_location="next_steps_module"
+                      data-bgq-connect_btn_action="referral_external"
+                      rel="nofollow"
+                      logged-click=""
+                      >916-999-9999</a
+                    ></span
+                  >
+                  <br />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    id="location-point"
+                    width="20"
+                    height="20"
+                    style="margin: 2vh 0"
+                  >
+                    <path
+                      fill="#060606"
+                      d="M18,4.48a8.45,8.45,0,0,0-12,12l5.27,5.28a1,1,0,0,0,1.42,0L18,16.43A8.45,8.45,0,0,0,18,4.48ZM16.57,15,12,19.59,7.43,15a6.46,6.46,0,1,1,9.14,0ZM9,7.41a4.32,4.32,0,0,0,0,6.1,4.31,4.31,0,0,0,7.36-3,4.24,4.24,0,0,0-1.26-3.05A4.3,4.3,0,0,0,9,7.41Zm4.69,4.68a2.33,2.33,0,1,1,.67-1.63A2.33,2.33,0,0,1,13.64,12.09Z"
+                    ></path>
+                  </svg>
+                  <span>Address: ABC D St, Sacramento, CA, 95580</span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="row">
+                <div class="col-md-8">
+                  <h4 class="card-title mt-2">Title</h4>
+                  <p>
+                    Description: A placeholder in web development is text shown
+                    in an input field to indicate the expected type of data. It
+                    is displayed before any input is entered and disappears when
+                    the user starts typing. This helps guide users on what
+                    information to enter, enhancing usability and form
+                    efficiency.
+                  </p>
+                  <button class="btn btn-success">Read More</button>
+                </div>
+                <div class="col-md-4">
+                  <h4 class="info">Next Steps:</h4>
+                  <span class="result-next-step-item"
+                    >Call
+                    <a
+                      href="tel:916-854-4426"
+                      class="activity-log connections-log"
+                      data-program-key="ahJzfnNlYXJjaGJlcnRoYS1ocmRyFAsSB1Byb2dyYW0YgIDQyp6snwgM"
+                      data-activity-type="click phone number"
+                      data-activity-data="916-999-9999"
+                      data-bgq-log-type="click_contact_prg_card"
+                      data-bgq-user_sql_id="None"
+                      data-bgq-user_urlsafe_key_deprecated="None"
+                      data-bgq-contact_method="phone"
+                      data-bgq-contact_value="916-854-4426"
+                      data-bgq-contact_location="next_steps_module"
+                      data-bgq-connect_btn_action="referral_external"
+                      rel="nofollow"
+                      logged-click=""
+                      >916-999-9999</a
+                    ></span
+                  >
+                  <br />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    id="location-point"
+                    width="20"
+                    height="20"
+                    style="margin: 2vh 0"
+                  >
+                    <path
+                      fill="#060606"
+                      d="M18,4.48a8.45,8.45,0,0,0-12,12l5.27,5.28a1,1,0,0,0,1.42,0L18,16.43A8.45,8.45,0,0,0,18,4.48ZM16.57,15,12,19.59,7.43,15a6.46,6.46,0,1,1,9.14,0ZM9,7.41a4.32,4.32,0,0,0,0,6.1,4.31,4.31,0,0,0,7.36-3,4.24,4.24,0,0,0-1.26-3.05A4.3,4.3,0,0,0,9,7.41Zm4.69,4.68a2.33,2.33,0,1,1,.67-1.63A2.33,2.33,0,0,1,13.64,12.09Z"
+                    ></path>
+                  </svg>
+                  <span>Address: ABC D St, Sacramento, CA, 95580</span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="row">
+                <div class="col-md-8">
+                  <h4 class="card-title mt-2">Title</h4>
+                  <p>
+                    Description: A placeholder in web development is text shown
+                    in an input field to indicate the expected type of data. It
+                    is displayed before any input is entered and disappears when
+                    the user starts typing. This helps guide users on what
+                    information to enter, enhancing usability and form
+                    efficiency.
+                  </p>
+                  <button class="btn btn-success">Read More</button>
+                </div>
+                <div class="col-md-4">
+                  <h4 class="info">Next Steps:</h4>
+                  <span class="result-next-step-item"
+                    >Call
+                    <a
+                      href="tel:916-854-4426"
+                      class="activity-log connections-log"
+                      data-program-key="ahJzfnNlYXJjaGJlcnRoYS1ocmRyFAsSB1Byb2dyYW0YgIDQyp6snwgM"
+                      data-activity-type="click phone number"
+                      data-activity-data="916-999-9999"
+                      data-bgq-log-type="click_contact_prg_card"
+                      data-bgq-user_sql_id="None"
+                      data-bgq-user_urlsafe_key_deprecated="None"
+                      data-bgq-contact_method="phone"
+                      data-bgq-contact_value="916-854-4426"
+                      data-bgq-contact_location="next_steps_module"
+                      data-bgq-connect_btn_action="referral_external"
+                      rel="nofollow"
+                      logged-click=""
+                      >916-999-9999</a
+                    ></span
+                  >
+                  <br />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    id="location-point"
+                    width="20"
+                    height="20"
+                    style="margin: 2vh 0"
+                  >
+                    <path
+                      fill="#060606"
+                      d="M18,4.48a8.45,8.45,0,0,0-12,12l5.27,5.28a1,1,0,0,0,1.42,0L18,16.43A8.45,8.45,0,0,0,18,4.48ZM16.57,15,12,19.59,7.43,15a6.46,6.46,0,1,1,9.14,0ZM9,7.41a4.32,4.32,0,0,0,0,6.1,4.31,4.31,0,0,0,7.36-3,4.24,4.24,0,0,0-1.26-3.05A4.3,4.3,0,0,0,9,7.41Zm4.69,4.68a2.33,2.33,0,1,1,.67-1.63A2.33,2.33,0,0,1,13.64,12.09Z"
+                    ></path>
+                  </svg>
+                  <span>Address: ABC D St, Sacramento, CA, 95580</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <footer style="background-color: #292929">
+      <div
+        class="footer-container"
+        style="display: flex; justify-content: space-between"
+      >
+        <div
+          class="footer-column"
+          style="
+            flex: 0; /* Each column takes equal space */
+            margin-left: 10vw; /* Add some padding around the columns */
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          "
+          onclick="window.location.href='index.html'"
+        >
+          <img
+            class="CcEmbelm"
+            style="width: 75px; height: 77.66px; flex: 1"
+            src="img/SCCLogo.PNG"
+          />
+        </div>
+        <div
+          class="footer-column"
+          style="
+            text-align: center;
+            color: white;
+            font-size: 32px;
+            font-family: 'Koh Santepheap';
+            font-weight: 700;
+            word-wrap: break-word;
+            flex: 0.2; /* Each column takes equal space */
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          "
+          onclick="window.location.href='index.html'"
+        >
+          Community <br />
+          Compass
+        </div>
+
+        <div
+          class="footer-column"
+          style="
+            flex: 1; /* Each column takes equal space */
+            display: flex; /* Enables flexbox */
+            flex-direction: column; /* Stacks children vertically */
+            align-items: center; /* Centers items horizontally in the container */
+            text-align: center; /* Aligns text centrally */
+          "
+        >
+          <div
+            class="Resources"
+            style="
+              color: white;
+              font-size: 32px;
+              font-family: 'Koh Santepheap';
+              font-weight: 400;
+              word-wrap: break-word;
+              margin-bottom: 20px; /* Adds space between the title and the icons */
+            "
+          >
+            Resources
+          </div>
+          <div
+            style="
+              display: flex; /* Enables flexbox for icons */
+              flex-direction: row; /* Aligns icons in a row */
+              justify-content: center; /* Centers icons horizontally */
+              align-items: center; /* Centers icons vertically */
+              flex-wrap: wrap; /* Allows icons to wrap on smaller screens */
+            "
+          >
+            <div
+              class="FoodBank"
+              onclick="window.location.href = 'FoodBank.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                id="utensils"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M19,2a1,1,0,0,0-1,1V8.46l-1,.67V3a1,1,0,0,0-2,0V9.13l-1-.67V3a1,1,0,0,0-2,0V9a1,1,0,0,0,.45.83L15,11.54V21a1,1,0,0,0,2,0V11.54l2.55-1.71A1,1,0,0,0,20,9V3A1,1,0,0,0,19,2ZM9,2H9A5,5,0,0,0,4,7v6a1,1,0,0,0,1,1H8v7a1,1,0,0,0,2,0V3A1,1,0,0,0,9,2ZM8,12H6V7A3,3,0,0,1,8,4.17Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="Shelter"
+              onclick="window.location.href = 'Shelter.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                id="home"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M21.66,10.25l-9-8a1,1,0,0,0-1.32,0l-9,8a1,1,0,0,0-.27,1.11A1,1,0,0,0,3,12H4v9a1,1,0,0,0,1,1H19a1,1,0,0,0,1-1V12h1a1,1,0,0,0,.93-.64A1,1,0,0,0,21.66,10.25ZM13,20H11V17a1,1,0,0,1,2,0Zm5,0H15V17a3,3,0,0,0-6,0v3H6V12H18ZM5.63,10,12,4.34,18.37,10Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="Employment"
+              onclick="window.location.href = 'Employment.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                data-name="Layer 1"
+                viewBox="0 0 24 24"
+                id="constructor"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M20,9.67V9.5a7.95,7.95,0,0,0-5.59-7.62l-.06,0a8.32,8.32,0,0,0-2.59-.36A8.21,8.21,0,0,0,4,9.67a3,3,0,0,0,0,5.66,8,8,0,0,0,8,7.17h.23a8.13,8.13,0,0,0,7.68-7.16A3,3,0,0,0,20,9.67ZM12.18,20.5a6,6,0,0,1-6.09-5H17.86A6.09,6.09,0,0,1,12.18,20.5Zm6.82-7H5a1,1,0,0,1,0-2H7a1,1,0,0,0,0-2H6A6.4,6.4,0,0,1,9,4.35V7.5a1,1,0,0,0,2,0V3.59a7.34,7.34,0,0,1,.82-.09H12a6.64,6.64,0,0,1,1,.09V7.5a1,1,0,0,0,2,0V4.32a6.65,6.65,0,0,1,1.18.87A6,6,0,0,1,18,9.5H17a1,1,0,0,0,0,2h2a1,1,0,0,1,0,2Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="HealthCare"
+              onclick="window.location.href = 'Healthcare.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                data-name="Layer 1"
+                viewBox="0 0 24 24"
+                id="medkit"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M10,17h1v1a1,1,0,0,0,2,0V17h1a1,1,0,0,0,0-2H13V14a1,1,0,0,0-2,0v1H10a1,1,0,0,0,0,2ZM19,6H17V5a3,3,0,0,0-3-3H10A3,3,0,0,0,7,5V6H5A3,3,0,0,0,2,9V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V9A3,3,0,0,0,19,6ZM9,5a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V6H9ZM20,19a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V9A1,1,0,0,1,5,8H19a1,1,0,0,1,1,1Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="Calendar"
+              onclick="window.location.href = 'calendar.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                id="calender"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M19,4H17V3a1,1,0,0,0-2,0V4H9V3A1,1,0,0,0,7,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V7A1,1,0,0,1,5,6H7V7A1,1,0,0,0,9,7V6h6V7a1,1,0,0,0,2,0V6h2a1,1,0,0,1,1,1Z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="footer-column"
+          style="
+            flex: 0.5;
+            display: flex; /* Enables flexbox layout */
+            flex-direction: column; /* Stacks children vertically */
+            justify-content: center; /* Centers children vertically */
+            align-items: center; /* Centers children horizontally */
+            height: 100%; /* Takes full height of its container */
+            margin-right: 10vw;
+          "
+        >
+          <div
+            class="ContactUs"
+            onclick="window.location.href = 'contact.html'"
+            style="
+              text-align: center;
+              color: white;
+              font-size: 32px;
+              font-family: 'Koh Santepheap';
+              font-weight: 400;
+              word-wrap: break-word;
+              margin: 2vh 0;
+              cursor: pointer;
+            "
+          >
+            Contact Us
+          </div>
+          <div
+            class="AboutUs"
+            onclick="window.location.href = 'AboutUs.html'"
+            style="
+              text-align: center;
+              color: white;
+              font-size: 32px;
+              font-family: 'Koh Santepheap';
+              font-weight: 400;
+              word-wrap: break-word;
+              margin: 2vh 0;
+              cursor: pointer;
+            "
+          >
+            About Us
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="copyrightSection"
+      style="background-color: #00573d; color: #fff; padding: 1vh 0"
+    >
+      <div class="col-md-12 text-center">
+        <p style="text-decoration: underline">
+          &copy; Copyright Team X @CSUS 2024
+        </p>
+      </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button
+      type="button"
+      class="btn btn-danger btn-floating btn-lg"
+      id="btn-back-to-top"
+      style="
+        background-color: #00573d;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border: 2px solid;
+      "
+    >
+      Back to Top
+    </button>
+    <script src="js/script.js"></script>
+    <script src="js/backToTop.js"></script>
   </body>
 </html>

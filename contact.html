@@ -1,36 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="css/stylesb.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/stylesb.css" />
+  </head>
+  <body>
+    <header style="background-color: white">
+      <div
+        class="header-container"
+        style="display: flex; justify-content: space-between"
+      >
+        <div
+          class="header-column"
+          onclick="window.location.href='index.html'"
+          style="cursor: pointer; flex: 1"
+        >
+          <img
+            class="CcEmbelm"
+            style="width: 75px; height: 77.66px"
+            src="img/SCCLogo.PNG"
+          />
+        </div>
+
+        <div
+          class="header-column"
+          style="
+            flex: 8;
+            color: black;
+            font-size: 32px;
+            font-family: 'Koh Santepheap';
+            font-weight: 700;
+            word-wrap: break-word;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--black);
+          "
+          onclick="window.location.href='index.html'"
+        >
+          Community Compass
+        </div>
+
+        <div
+          class="header-column"
+          onclick="window.location.href='AboutUs.html'"
+          style="
+            flex: 1;
+            color: black;
+            font-size: 22px;
+            font-family: 'Kulim Park';
+            font-weight: 400;
+            word-wrap: break-word;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--black);
+          "
+        >
+          About
+        </div>
+        <div
+          class="header-column"
+          onclick="window.location.href='contact.html'"
+          style="
+            flex: 1;
+            color: black;
+            font-size: 22px;
+            font-family: 'Kulim Park';
+            font-weight: 400;
+            word-wrap: break-word;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--black);
+          "
+        >
+          Contact
+        </div>
+        <div
+          class="header-column"
+          onclick="window.location.href='calendar.html'"
+          style="
+            flex: 1;
+            color: black;
+            font-size: 22px;
+            font-family: 'Kulim Park';
+            font-weight: 400;
+            word-wrap: break-word;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--black);
+          "
+        >
+          Calendar
+        </div>
+        <div
+          class="header-column"
+          style="flex: 1; z-index: 1050; padding: 0.5rem 1rem"
+        >
+          <div class="row">
+            <input
+              type="text"
+              id="input-box"
+              placeholder="Search..."
+              autocomplete="off"
+              style="
+                height: 40px;
+                width: 20vw;
+                padding: 0 10px;
+                font-size: 16px;
+                border: none;
+              "
+            />
+          </div>
+          <div
+            class="result-box"
+            style="
+              z-index: 1050;
+              max-height: 200px;
+              overflow-y: auto;
+              background-color: #fff;
+              padding: 10px;
+            "
+          >
+            <style>
+              .result-box ul {
+                border-top: 1px solid #ffff;
+                padding: 10px;
+                margin: 0;
+                list-style-type: none;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+    </header>
     <div class="container">
-        <div class="info-section">
-            <h1>Contact Us</h1>
-            <p>Welcome to Community Compass—your gateway to support and engagement within our vibrant community. We are committed to providing you with the assistance you need in the most convenient way possible.</p>
-            <hr>
-            <h2>How Can You Reach Us?</h2>
-            <h3>Direct Contact Form:</h3>
-            <p>For quick assistance or inquiries, please use the contact form on the right side of this page. Fill out the necessary details, and our team will get back to you as promptly as possible.</p>
-            <h3>Email Us Directly:</h3>
-            <p>If you prefer to send us an email, you can reach out at <a href="mailto:reddyniv03@gmail.com">reddyniv03@gmail.com</a> Whether you have questions, feedback, or need further assistance, we're here to help. Please include as much detail as possible to allow us to address your concerns swiftly.</p>
-            <p>We strive to respond to all queries within 24-48 hours. Please note that response times may vary during peak periods.  </p>
-            <hr>
-            <h2>Why choose Community Compass?</h2>
-            <p>Community Compass is designed to be your first stop for community engagement and support. Our digital-first approach ensures that you can get the help you need quickly and efficiently, without the need for phone calls or in-person visits.</p>
-            <hr>
-            <h2>More Questions?</h2>
-            <p>If you have more questions or need further assistance, feel free to contact us through the form or by email. Our dedicated team is eager to support you in making the most of our community resources.</p>
-        </div>
-        <div class="form-section">
-            <!-- Custom Form Embed -->
-            <div data-customgform="clvfozbog008dwnmqzfjxf10o"></div>
-            <!-- Custom GForm Script -->
-            <script async src="https://cdn.customgform.com/cgf.js"></script>
-        </div>
+      <div class="info-section">
+        <h1>Contact Us</h1>
+        <p>
+          Welcome to Community Compass—your gateway to support and engagement
+          within our vibrant community. We are committed to providing you with
+          the assistance you need in the most convenient way possible.
+        </p>
+        <hr />
+        <h2>How Can You Reach Us?</h2>
+        <h3>Direct Contact Form:</h3>
+        <p>
+          For quick assistance or inquiries, please use the contact form on the
+          right side of this page. Fill out the necessary details, and our team
+          will get back to you as promptly as possible.
+        </p>
+        <h3>Email Us Directly:</h3>
+        <p>
+          If you prefer to send us an email, you can reach out at
+          <a href="mailto:reddyniv03@gmail.com">reddyniv03@gmail.com</a> Whether
+          you have questions, feedback, or need further assistance, we're here
+          to help. Please include as much detail as possible to allow us to
+          address your concerns swiftly.
+        </p>
+        <p>
+          We strive to respond to all queries within 24-48 hours. Please note
+          that response times may vary during peak periods.
+        </p>
+        <hr />
+        <h2>Why choose Community Compass?</h2>
+        <p>
+          Community Compass is designed to be your first stop for community
+          engagement and support. Our digital-first approach ensures that you
+          can get the help you need quickly and efficiently, without the need
+          for phone calls or in-person visits.
+        </p>
+        <hr />
+        <h2>More Questions?</h2>
+        <p>
+          If you have more questions or need further assistance, feel free to
+          contact us through the form or by email. Our dedicated team is eager
+          to support you in making the most of our community resources.
+        </p>
+      </div>
+      <div class="form-section">
+        <!-- Custom Form Embed -->
+        <div data-customgform="clvfozbog008dwnmqzfjxf10o"></div>
+        <!-- Custom GForm Script -->
+        <script async src="https://cdn.customgform.com/cgf.js"></script>
+      </div>
     </div>
-</body>
+    <!-- Footer Section -->
+    <footer style="background-color: #292929">
+      <div
+        class="footer-container"
+        style="display: flex; justify-content: space-between"
+      >
+        <div
+          class="footer-column"
+          style="
+            flex: 0; /* Each column takes equal space */
+            margin-left: 10vw; /* Add some padding around the columns */
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          "
+          onclick="window.location.href='index.html'"
+        >
+          <img
+            class="CcEmbelm"
+            style="width: 75px; height: 77.66px; flex: 1"
+            src="img/SCCLogo.PNG"
+          />
+        </div>
+        <div
+          class="footer-column"
+          style="
+            text-align: center;
+            color: white;
+            font-size: 32px;
+            font-family: 'Koh Santepheap';
+            font-weight: 700;
+            word-wrap: break-word;
+            flex: 0.2; /* Each column takes equal space */
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          "
+          onclick="window.location.href='index.html'"
+        >
+          Community <br />
+          Compass
+        </div>
+
+        <div
+          class="footer-column"
+          style="
+            flex: 1; /* Each column takes equal space */
+            display: flex; /* Enables flexbox */
+            flex-direction: column; /* Stacks children vertically */
+            align-items: center; /* Centers items horizontally in the container */
+            text-align: center; /* Aligns text centrally */
+          "
+        >
+          <div
+            class="Resources"
+            style="
+              color: white;
+              font-size: 32px;
+              font-family: 'Koh Santepheap';
+              font-weight: 400;
+              word-wrap: break-word;
+              margin-bottom: 20px; /* Adds space between the title and the icons */
+            "
+          >
+            Resources
+          </div>
+          <div
+            style="
+              display: flex; /* Enables flexbox for icons */
+              flex-direction: row; /* Aligns icons in a row */
+              justify-content: center; /* Centers icons horizontally */
+              align-items: center; /* Centers icons vertically */
+              flex-wrap: wrap; /* Allows icons to wrap on smaller screens */
+            "
+          >
+            <div
+              class="FoodBank"
+              onclick="window.location.href = 'FoodBank.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                id="utensils"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M19,2a1,1,0,0,0-1,1V8.46l-1,.67V3a1,1,0,0,0-2,0V9.13l-1-.67V3a1,1,0,0,0-2,0V9a1,1,0,0,0,.45.83L15,11.54V21a1,1,0,0,0,2,0V11.54l2.55-1.71A1,1,0,0,0,20,9V3A1,1,0,0,0,19,2ZM9,2H9A5,5,0,0,0,4,7v6a1,1,0,0,0,1,1H8v7a1,1,0,0,0,2,0V3A1,1,0,0,0,9,2ZM8,12H6V7A3,3,0,0,1,8,4.17Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="Shelter"
+              onclick="window.location.href = 'Shelter.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                id="home"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M21.66,10.25l-9-8a1,1,0,0,0-1.32,0l-9,8a1,1,0,0,0-.27,1.11A1,1,0,0,0,3,12H4v9a1,1,0,0,0,1,1H19a1,1,0,0,0,1-1V12h1a1,1,0,0,0,.93-.64A1,1,0,0,0,21.66,10.25ZM13,20H11V17a1,1,0,0,1,2,0Zm5,0H15V17a3,3,0,0,0-6,0v3H6V12H18ZM5.63,10,12,4.34,18.37,10Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="Employment"
+              onclick="window.location.href = 'Employment.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                data-name="Layer 1"
+                viewBox="0 0 24 24"
+                id="constructor"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M20,9.67V9.5a7.95,7.95,0,0,0-5.59-7.62l-.06,0a8.32,8.32,0,0,0-2.59-.36A8.21,8.21,0,0,0,4,9.67a3,3,0,0,0,0,5.66,8,8,0,0,0,8,7.17h.23a8.13,8.13,0,0,0,7.68-7.16A3,3,0,0,0,20,9.67ZM12.18,20.5a6,6,0,0,1-6.09-5H17.86A6.09,6.09,0,0,1,12.18,20.5Zm6.82-7H5a1,1,0,0,1,0-2H7a1,1,0,0,0,0-2H6A6.4,6.4,0,0,1,9,4.35V7.5a1,1,0,0,0,2,0V3.59a7.34,7.34,0,0,1,.82-.09H12a6.64,6.64,0,0,1,1,.09V7.5a1,1,0,0,0,2,0V4.32a6.65,6.65,0,0,1,1.18.87A6,6,0,0,1,18,9.5H17a1,1,0,0,0,0,2h2a1,1,0,0,1,0,2Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="HealthCare"
+              onclick="window.location.href = 'Healthcare.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                data-name="Layer 1"
+                viewBox="0 0 24 24"
+                id="medkit"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M10,17h1v1a1,1,0,0,0,2,0V17h1a1,1,0,0,0,0-2H13V14a1,1,0,0,0-2,0v1H10a1,1,0,0,0,0,2ZM19,6H17V5a3,3,0,0,0-3-3H10A3,3,0,0,0,7,5V6H5A3,3,0,0,0,2,9V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V9A3,3,0,0,0,19,6ZM9,5a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V6H9ZM20,19a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V9A1,1,0,0,1,5,8H19a1,1,0,0,1,1,1Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="Calendar"
+              onclick="window.location.href = 'calendar.html'"
+              style="
+                color: white;
+                font-size: 20px;
+                font-family: 'Koh Santepheap';
+                font-weight: 300;
+                word-wrap: break-word;
+                cursor: pointer;
+                margin: 0 10px; /* Adds space between icons */
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                id="calender"
+                width="50"
+                height="50"
+              >
+                <path
+                  fill="#F3F3F3"
+                  d="M19,4H17V3a1,1,0,0,0-2,0V4H9V3A1,1,0,0,0,7,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V7A1,1,0,0,1,5,6H7V7A1,1,0,0,0,9,7V6h6V7a1,1,0,0,0,2,0V6h2a1,1,0,0,1,1,1Z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="footer-column"
+          style="
+            flex: 0.5;
+            display: flex; /* Enables flexbox layout */
+            flex-direction: column; /* Stacks children vertically */
+            justify-content: center; /* Centers children vertically */
+            align-items: center; /* Centers children horizontally */
+            height: 100%; /* Takes full height of its container */
+            margin-right: 10vw;
+          "
+        >
+          <div
+            class="ContactUs"
+            onclick="window.location.href = 'contact.html'"
+            style="
+              text-align: center;
+              color: white;
+              font-size: 32px;
+              font-family: 'Koh Santepheap';
+              font-weight: 400;
+              word-wrap: break-word;
+              margin: 2vh 0;
+              cursor: pointer;
+            "
+          >
+            Contact Us
+          </div>
+          <div
+            class="AboutUs"
+            onclick="window.location.href = 'AboutUs.html'"
+            style="
+              text-align: center;
+              color: white;
+              font-size: 32px;
+              font-family: 'Koh Santepheap';
+              font-weight: 400;
+              word-wrap: break-word;
+              margin: 2vh 0;
+              cursor: pointer;
+            "
+          >
+            About Us
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="copyrightSection"
+      style="background-color: #00573d; color: #fff; padding: 1vh 0"
+    >
+      <div class="col-md-12 text-center">
+        <p style="text-decoration: underline">
+          &copy; Copyright Team X @CSUS 2024
+        </p>
+      </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button
+      type="button"
+      class="btn btn-danger btn-floating btn-lg"
+      id="btn-back-to-top"
+      style="
+        background-color: #00573d;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border: 2px solid;
+      "
+    >
+      Back to Top
+    </button>
+    <script src="js/script.js"></script>
+    <script src="js/backToTop.js"></script>
+  </body>
 </html>

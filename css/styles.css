@@ -1,63 +1,80 @@
+body {
+  font-family: "Koh Santepheap";
+  background-color: #d8d2b8;
+}
 /*------------------------------------*/
 /*resource*/
-#Horizontal-Navigation-Bar {
+
+.header-container {
+  background-color: white;
   display: flex;
-  align-items: center;
-  padding: 15px;
+  justify-content: space-between;
+}
+.header-column {
+  font-size: 22px;
+  font-family: "Kulim Park";
+  font-weight: 400;
+  word-wrap: break-word;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: var(--black);
+  flex: 1;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.header-column img {
+  width: 50px;
+  height: auto;
+}
+button {
+  cursor: pointer;
 }
 
-#Horizontal-Navigation-Bar img {
-  height: 50px;
-  margin-right: 10px;
+/*custom checkbox*/
+.custom-checkbox input {
+  display: none;
 }
 
-#Horizontal-Navigation-Bar ul {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+/* Create a custom circular box */
+.custom-checkbox span {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%; /* Makes the span circular */
+  border: 2px solid #555; /* Border for the circle */
+  display: inline-block;
+  position: relative;
 }
 
-#Horizontal-Navigation-Bar li {
-  padding: 20px;
+/* Style for when the checkbox is checked */
+.custom-checkbox input:checked + span {
+  background-color: #4caf50; /* Change background color when checked */
+  border-color: #4caf50; /* Optional: change border color when checked */
 }
 
-#Horizontal-Navigation-Bar button {
-  background: transparent;
-  border: none;
-  border-bottom-width: medium;
-  border-bottom-style: none;
-  border-bottom-color: currentcolor;
-  font-size: 23px;
-  border-bottom: 3px solid #000;
-  padding: 0;
-  margin: 0 2vw;
+/* Add a checkmark inside the circle when checked */
+.custom-checkbox input:checked + span:after {
+  content: "";
+  position: absolute;
+  top: 4px; /* Positioning of the checkmark */
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%; /* Makes the inner checkmark circular */
+  background: white; /* Color of the checkmark */
 }
 
-#Horizontal-Navigation-Bar li a:hover {
-  color: #13481d;
+#banner {
+  margin-left: 1vw;
 }
-
-#Horizontal-Navigation-Bar li.right {
-  margin-left: auto;
-}
-
-/* Vertical Toolbar Styling */
-
-#Vertical-Toolbar {
-  margin-left: 15px;
-}
-
-#Vertical-Toolbar h2 {
+#banner h2 {
   color: #000000;
   font-size: 34px;
   font-weight: 600;
-  margin-left: 10px;
-  margin-top: 30px;
+  margin: 3vh 0;
 }
 
-#Vertical-Toolbar h4 {
+#banner h4 {
   margin: 0;
   font-weight: lighter;
   font-family: "Koh Santepheap", sans-serif;
@@ -65,8 +82,10 @@
   line-height: 40.63px;
   text-align: left;
 }
-
-#Vertical-Toolbar button {
+/*.col-md-3 {
+  margin: 0 1vw;
+}*/
+.filters-container button {
   background: none;
   border: none;
   padding: 0;
@@ -141,9 +160,13 @@
   width: 100%;
 }
 .overview {
-  margin: 23vh;
+  margin: 10vh 5vw;
 }
 .overview h1 {
+  color: #fff;
+  text-align: center;
+}
+.overview h3 {
   color: #fff;
   text-align: center;
 }
@@ -170,4 +193,28 @@
   align-items: center;
   text-align: center;
   color: #fff;
+}
+.col-md-9 .col-md-8 h4 {
+  padding: 0 1vw;
+}
+
+.col-md-9 .card p {
+  padding: 0 1vw;
+}
+.col-md-9 button {
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+}
+.col-md-9 .card {
+  margin-bottom: 3vh;
+}
+.col-md-9 .col-md-8 h4 {
+  font-weight: bold;
+  color: #198754;
+  font-size: 18px;
+}
+.col-md-9 .col-md-4 h4 {
+  margin-top: 7vh;
+  font-weight: bold;
+  font-size: 18px;
 }
