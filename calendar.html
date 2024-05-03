@@ -8,6 +8,13 @@
       href="https://unpkg.com/fullcalendar@5/main.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
       #calendar {
         max-width: 900px;
@@ -16,22 +23,20 @@
     </style>
   </head>
   <body>
-    <style>
-      body {
-        background-color: #d8d2b8;
-      }
-    </style>
-    <header style="background-color: #142e29">
+    <header style="background-color: white">
       <div
         class="header-container"
-        style="display: flex; justify-content: space-between; padding: 20px"
+        style="display: flex; justify-content: space-between"
       >
-        <div class="header-column">
+        <div
+          class="header-column"
+          onclick="window.location.href='index.html'"
+          style="cursor: pointer"
+        >
           <img
             class="CcEmbelm"
             style="width: 75px; height: 77.66px; flex: 1"
             src="img/SCCLogo.PNG"
-            onclick="window.location.href='index.html'"
           />
         </div>
 
@@ -39,15 +44,18 @@
           class="header-column"
           style="
             flex: 8;
-            color: white;
+            color: black;
             font-size: 32px;
             font-family: 'Koh Santepheap';
             font-weight: 700;
             word-wrap: break-word;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--black);
           "
           onclick="window.location.href='index.html'"
         >
-          Community<br />Compass
+          Community Compass
         </div>
 
         <div
@@ -55,44 +63,56 @@
           onclick="window.location.href='AboutUs.html'"
           style="
             flex: 1;
-            color: white;
+            color: black;
             font-size: 22px;
             font-family: 'Kulim Park';
             font-weight: 400;
             word-wrap: break-word;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--black);
           "
         >
-          About Us
+          About
         </div>
         <div
           class="header-column"
           onclick="window.location.href='contact.html'"
           style="
             flex: 1;
-            color: white;
+            color: black;
             font-size: 22px;
             font-family: 'Kulim Park';
             font-weight: 400;
             word-wrap: break-word;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--black);
           "
         >
-          Contact Us
+          Contact
         </div>
         <div
           class="header-column"
           onclick="window.location.href='calendar.html'"
           style="
             flex: 1;
-            color: white;
+            color: black;
             font-size: 22px;
             font-family: 'Kulim Park';
             font-weight: 400;
             word-wrap: break-word;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--black);
           "
         >
           Calendar
         </div>
-        <div class="header-column" style="flex: 1; z-index: 1050">
+        <div
+          class="header-column"
+          style="flex: 1; z-index: 1050; padding: 0.5rem 1rem"
+        >
           <div class="row">
             <input
               type="text"
@@ -101,7 +121,7 @@
               autocomplete="off"
               style="
                 height: 40px;
-                width: 9vw;
+                width: 20vw;
                 padding: 0 10px;
                 font-size: 16px;
                 border: none;
@@ -130,189 +150,39 @@
         </div>
       </div>
     </header>
-    <!-- Checkboxes for filtering events by color -->
-    <label
-      ><input type="checkbox" value="#008000" checked /> Shelter Events
-      (Green)</label
-    >
-    <label
-      ><input type="checkbox" value="#0000FF" checked /> Job Fairs (Blue)</label
-    >
-    <label
-      ><input type="checkbox" value="#FF0000" checked /> Food Distributions
-      (Red)</label
-    >
+    <script src="js/script.js"></script>
 
-    <div id="calendar"></div>
-    <footer style="background-color: #292929">
-      <div
-        class="footer-container"
-        style="display: flex; justify-content: space-between; padding: 20px"
-      >
-        <div
-          class="footer-column"
-          style="
-            flex: 0; /* Each column takes equal space */
-            margin-left: 1vw; /* Add some padding around the columns */
-          "
-        >
-          <img
-            class="CcEmbelm"
-            style="width: 130px; height: 134.61px"
-            src="img/SCCLogo.PNG"
-            onclick="window.location.href='index.html'"
-          />
-        </div>
-        <div
-          class="footer-column"
-          style="
-            text-align: center;
-            color: white;
-            font-size: 100px;
-            font-family: 'Koh Santepheap';
-            font-weight: 700;
-            word-wrap: break-word;
-            flex: 1; /* Each column takes equal space */
-          "
-          onclick="window.location.href='index.html'"
-        >
-          Community Compass
-        </div>
-        <div
-          class="footer-column"
-          style="
-            flex: 0.5;
-            display: flex; /* Enables flexbox layout */
-            flex-direction: column; /* Stacks children vertically */
-            justify-content: center; /* Centers children vertically */
-            align-items: center; /* Centers children horizontally */
-            height: 100%; /* Takes full height of its container */
-          "
-        >
-          <div
-            class="ContactUs"
-            onclick="window.location.href = 'contact.html'"
-            style="
-              text-align: center;
-              color: white;
-              font-size: 32px;
-              font-family: 'Koh Santepheap';
-              font-weight: 400;
-              word-wrap: break-word;
-              margin: 2vh 0;
-            "
-          >
-            Contact Us
+    <div class="container mt-4" style="margin: 25vh 0; padding-top: 5vh">
+      <div class="row">
+        <!-- Labels Column -->
+        <div class="col-md-3">
+          <div class="mb-3">
+            <label
+              ><input type="checkbox" value="#008000" checked /> Shelter Events
+              (Green)</label
+            >
           </div>
-          <div
-            class="AboutUs"
-            onclick="window.location.href = 'AboutUs.html'"
-            style="
-              text-align: center;
-              color: white;
-              font-size: 32px;
-              font-family: 'Koh Santepheap';
-              font-weight: 400;
-              word-wrap: break-word;
-              margin: 2vh 0;
-            "
-          >
-            About Us
+          <div class="mb-3">
+            <label
+              ><input type="checkbox" value="#0000FF" checked /> Job Fairs
+              (Blue)</label
+            >
+          </div>
+          <div class="mb-3">
+            <label
+              ><input type="checkbox" value="#FF0000" checked /> Food
+              Distributions (Red)</label
+            >
           </div>
         </div>
-        <div
-          class="footer-column"
-          style="flex: 0.3; /* Each column takes equal space */"
-        >
-          <div
-            class="Resources"
-            style="
-              text-align: center;
-              color: white;
-              font-size: 32px;
-              font-family: 'Koh Santepheap';
-              font-weight: 400;
-              word-wrap: break-word;
-            "
-          >
-            Resources
-          </div>
-          <div
-            class="FoodBank"
-            onclick="window.location.href = 'FoodBank.html'"
-            style="
-              text-align: center;
-              color: white;
-              font-size: 20px;
-              font-family: 'Koh Santepheap';
-              font-weight: 300;
-              word-wrap: break-word;
-            "
-          >
-            Food Bank
-          </div>
-          <div
-            class="Shelter"
-            onclick="window.location.href = 'Shelter.html'"
-            style="
-              text-align: center;
-              color: white;
-              font-size: 20px;
-              font-family: 'Koh Santepheap';
-              font-weight: 300;
-              word-wrap: break-word;
-            "
-          >
-            Shelter
-          </div>
-          <div
-            class="Employment"
-            onclick="window.location.href = 'Employment.html'"
-            style="
-              text-align: center;
-              color: white;
-              font-size: 20px;
-              font-family: 'Koh Santepheap';
-              font-weight: 300;
-              word-wrap: break-word;
-            "
-          >
-            Employment
-          </div>
-          <div
-            class="HealthCare"
-            onclick="window.location.href = 'Healthcare.html'"
-            style="
-              text-align: center;
-              color: white;
-              font-size: 20px;
-              font-family: 'Koh Santepheap';
-              font-weight: 300;
-              word-wrap: break-word;
-            "
-          >
-            Health Care
-          </div>
-          <div
-            class="Calendar"
-            onclick="window.location.href = 'calendar.html'"
-            style="
-              text-align: center;
-              color: white;
-              font-size: 20px;
-              font-family: 'Koh Santepheap';
-              font-weight: 300;
-              word-wrap: break-word;
-            "
-          >
-            Calendar
-          </div>
+
+        <!-- Calendar Column -->
+        <div class="col-md-9">
+          <div id="calendar"></div>
         </div>
       </div>
-    </footer>
-
+    </div>
     <script src="https://unpkg.com/fullcalendar@5/main.min.js"></script>
     <script src="js/calendar.js"></script>
-    <script src="js/script.js"></script>
   </body>
 </html>
