@@ -6,420 +6,43 @@
   crossorigin="anonymous"
 />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<!-- Main Page Container -->
-<div
-  class="MainPage"
-  style="width: 100%; height: 100%; position: relative; background: #d8d2b8"
->
-  <!-- Banner Section -->
-  <div
-    class="Banner"
-    style="background-color: white; width: 100%; height: 100px"
-  >
-    <div class="container">
-      <div
-        class="CcLogo"
-        style="
-          width: 278px;
-          height: 84px;
-          left: 21px;
-          top: 7px;
-          position: absolute;
-        "
-      >
-        <div
-          class="CommunityCompass"
-          style="
-            left: 88px;
-            top: 2px;
-            position: absolute;
-            color: black;
-            font-size: 32px;
-            font-family: 'Koh Santepheap';
-            font-weight: 700;
-            word-wrap: break-word;
-          "
-        >
-          Community<br />Compass
-        </div>
-        <img
-          class="CcEmbelm"
-          style="
-            width: 75px;
-            height: 77.66px;
-            left: 0px;
-            top: 0px;
-            position: absolute;
-          "
-          src="img/SCCLogo.PNG"
-        />
-      </div>
-      <img
-        class="Search"
-        style="
-          width: 59px;
-          height: 59px;
-          right: 0%;
-          top: 20px;
-          position: absolute;
-          transform-origin: 0 0;
-        "
-        src="img/Search.png"
-      />
-      <div
-        class="AboutUsButton"
-        onclick="window.location.href='AboutUs.html'"
-        style="
-          right: 5%;
-          top: 26px;
-          position: absolute;
-          color: black;
-          font-size: 32px;
-          font-family: 'Kulim Park';
-          font-weight: 400;
-          word-wrap: break-word;
-        "
-      >
-        About Us
-      </div>
-      <div
-        class="ContactUsButton"
-        onclick="window.location.href='contact.html'"
-        style="
-          width: 168px;
-          height: 33px;
-          right: 11%;
-          top: 28px;
-          position: absolute;
-          color: black;
-          font-size: 32px;
-          font-family: 'Kulim Park';
-          font-weight: 400;
-          word-wrap: break-word;
-        "
-      >
-        Contact Us
-      </div>
-      <div
-        class="ContactUsButton"
-        onclick="window.location.href='calendar.html'"
-        style="
-          width: 134px;
-          height: 34px;
-          right: 20%;
-          top: 26px;
-          position: absolute;
-          color: black;
-          font-size: 32px;
-          font-family: 'Kulim Park';
-          font-weight: 400;
-          word-wrap: break-word;
-        "
-      >
-        Calendar
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <img
-      class="MainPageImg"
-      style="
-        width: 100%;
-        height: 660px;
-        left: 0px;
-        top: 101px;
-        position: absolute;
-      "
-      src="img/SacBackrgound2.webp"
-    />
-  </div>
 
+<!-- Banner Section -->
+<header style="background-color: white">
   <div
-    class="container"
-    style="display: flex; align-items: center; justify-content: center"
+    class="header-container"
+    style="display: flex; justify-content: space-between; padding: 20px"
   >
-    <div class="row" style="position: absolute; top: 900px">
-      <div class="col-md-6" style="padding-right: 20px; position: relative">
-        <img
-          src="img/Shelter.jpg"
-          style="
-            width: 20vw; /* Adjusted to use full column width */
-            height: auto;
-            display: block; /* Ensures no extra space on sides */
-            margin-bottom: 8px; /* Space between image and button */
-          "
-        />
-        <button
-          class="rsc-btn"
-          style="
-            width: 200px;
-            height: 50px;
-            line-height: 50px;
-            font-size: 18px;
-            background-color: #00573d;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            display: block; /* Aligns the button to center */
-            margin: 0 auto; /* Centers the button horizontally */
-            margin-bottom: 8px; /* Space between button and paragraph */
-          "
-        >
-          SHELTER
-        </button>
-        <p
-          style="
-            text-align: center;
-            width: 100%; /* Full width to align text properly */
-          "
-        >
-          Find available shelters in Sacramento, detailing locations and types
-          of accommodations for homeless individuals. It aims to connect those
-          in need with safe and appropriate shelter options, focusing on
-          providing immediate housing solutions.
-        </p>
-      </div>
-      <div class="col-md-6" style="padding-right: 20px; position: relative">
-        <img
-          src="img/Shelter.jpg"
-          style="
-            width: 20vw; /* Adjusted to use full column width */
-            height: auto;
-            display: block; /* Ensures no extra space on sides */
-            margin-bottom: 8px; /* Space between image and button */
-          "
-        />
-        <button
-          class="rsc-btn"
-          style="
-            width: 200px;
-            height: 50px;
-            line-height: 50px;
-            font-size: 18px;
-            background-color: #00573d;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            display: block; /* Aligns the button to center */
-            margin: 0 auto; /* Centers the button horizontally */
-            margin-bottom: 8px; /* Space between button and paragraph */
-          "
-        >
-          SHELTER
-        </button>
-        <p
-          style="
-            text-align: center;
-            width: 100%; /* Full width to align text properly */
-          "
-        >
-          Find available shelters in Sacramento, detailing locations and types
-          of accommodations for homeless individuals. It aims to connect those
-          in need with safe and appropriate shelter options, focusing on
-          providing immediate housing solutions.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div
-    class="container"
-    style="display: flex; align-items: center; justify-content: center"
-  >
-    <div class="row" style="position: absolute; top: 1300px">
-      <div class="col-md-6" style="padding-right: 20px; position: relative">
-        <img
-          src="img/Shelter.jpg"
-          style="
-            width: 20vw; /* Adjusted to use full column width */
-            height: auto;
-            display: block; /* Ensures no extra space on sides */
-            margin-bottom: 8px; /* Space between image and button */
-          "
-        />
-        <button
-          class="rsc-btn"
-          style="
-            width: 200px;
-            height: 50px;
-            line-height: 50px;
-            font-size: 18px;
-            background-color: #00573d;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            display: block; /* Aligns the button to center */
-            margin: 0 auto; /* Centers the button horizontally */
-            margin-bottom: 8px; /* Space between button and paragraph */
-          "
-        >
-          SHELTER
-        </button>
-        <p
-          style="
-            text-align: center;
-            width: 100%; /* Full width to align text properly */
-          "
-        >
-          Find available shelters in Sacramento, detailing locations and types
-          of accommodations for homeless individuals. It aims to connect those
-          in need with safe and appropriate shelter options, focusing on
-          providing immediate housing solutions.
-        </p>
-      </div>
-      <div class="col-md-6" style="padding-right: 20px; position: relative">
-        <img
-          src="img/Shelter.jpg"
-          style="
-            width: 20vw; /* Adjusted to use full column width */
-            height: auto;
-            display: block; /* Ensures no extra space on sides */
-            margin-bottom: 8px; /* Space between image and button */
-          "
-        />
-        <button
-          class="rsc-btn"
-          style="
-            width: 200px;
-            height: 50px;
-            line-height: 50px;
-            font-size: 18px;
-            background-color: #00573d;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            display: block; /* Aligns the button to center */
-            margin: 0 auto; /* Centers the button horizontally */
-            margin-bottom: 8px; /* Space between button and paragraph */
-          "
-        >
-          SHELTER
-        </button>
-        <p
-          style="
-            text-align: center;
-            width: 100%; /* Full width to align text properly */
-          "
-        >
-          Find available shelters in Sacramento, detailing locations and types
-          of accommodations for homeless individuals. It aims to connect those
-          in need with safe and appropriate shelter options, focusing on
-          providing immediate housing solutions.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Visual Divider -->
-  <div
-    class="Divider"
-    style="
-      width: 100%;
-      height: 106px;
-      left: -5px;
-      top: 742px;
-      position: absolute;
-      background: linear-gradient(
-        90deg,
-        #002009 0%,
-        #105624 30%,
-        #228f41 62%,
-        #32c75c 93%
-      );
-    "
-  ></div>
-
-  <!-- Footer Section -->
-  <div
-    class="Footer"
-    style="
-      width: 100%;
-      height: 30vh;
-      top: 1951px;
-      position: absolute;
-      background: #292929;
-    "
-  >
-    <div
-      class="CcLogo"
-      style="
-        width: 706px;
-        height: 134.61px;
-        left: 104px;
-        top: 30px;
-        position: absolute;
-      "
-    >
-      <div
-        class="CommunityCompass"
-        style="
-          width: 601px;
-          height: 81px;
-          left: 105px;
-          top: 34px;
-          position: absolute;
-          text-align: center;
-          color: white;
-          font-size: 48px;
-          font-family: 'Koh Santepheap';
-          font-weight: 700;
-          word-wrap: break-word;
-        "
-      >
-        Community Compass
-      </div>
+    <div class="header-column">
       <img
         class="CcEmbelm"
-        style="
-          width: 130px;
-          height: 134.61px;
-          left: 0px;
-          top: 0px;
-          position: absolute;
-        "
+        style="width: 75px; height: 77.66px; flex: 1"
         src="img/SCCLogo.PNG"
       />
     </div>
+
     <div
-      class="ContactUs"
-      onclick="window.location.href = 'contact.html'"
+      class="header-column"
       style="
-        left: 897px;
-        top: 134px;
-        position: absolute;
-        text-align: center;
-        color: white;
+        flex: 8;
+        color: black;
         font-size: 32px;
         font-family: 'Koh Santepheap';
-        font-weight: 400;
+        font-weight: 700;
         word-wrap: break-word;
       "
     >
-      Contact Us
+      Community<br />Compass
     </div>
+
     <div
-      class="AboutUs"
-      onclick="window.location.href = 'AboutUs.html'"
+      class="header-column"
+      onclick="window.location.href='AboutUs.html'"
       style="
-        left: 909px;
-        top: 55px;
-        position: absolute;
-        text-align: center;
-        color: white;
+        flex: 1;
+        color: black;
         font-size: 32px;
-        font-family: 'Koh Santepheap';
+        font-family: 'Kulim Park';
         font-weight: 400;
         word-wrap: break-word;
       "
@@ -427,105 +50,439 @@
       About Us
     </div>
     <div
-      class="Resources"
+      class="header-column"
+      onclick="window.location.href='contact.html'"
       style="
-        left: 1150px;
-        top: 15px;
-        position: absolute;
-        text-align: center;
-        color: white;
+        flex: 1;
+        color: black;
         font-size: 32px;
-        font-family: 'Koh Santepheap';
+        font-family: 'Kulim Park';
         font-weight: 400;
         word-wrap: break-word;
       "
     >
-      Resources
+      Contact Us
     </div>
     <div
-      class="FoodBank"
-      onclick="window.location.href = 'FoodBank.html'"
+      class="header-column"
+      onclick="window.location.href='calendar.html'"
       style="
-        left: 1150px;
-        top: 97px;
-        position: absolute;
-        text-align: center;
-        color: white;
-        font-size: 20px;
-        font-family: 'Koh Santepheap';
-        font-weight: 300;
-        word-wrap: break-word;
-      "
-    >
-      Food Bank
-    </div>
-    <div
-      class="Shelter"
-      onclick="window.location.href = 'Shelter.html'"
-      style="
-        left: 1150px;
-        top: 64px;
-        position: absolute;
-        text-align: center;
-        color: white;
-        font-size: 20px;
-        font-family: 'Koh Santepheap';
-        font-weight: 300;
-        word-wrap: break-word;
-      "
-    >
-      Shelter
-    </div>
-    <div
-      class="Employment"
-      onclick="window.location.href = 'Employment.html'"
-      style="
-        left: 1150px;
-        top: 130px;
-        position: absolute;
-        text-align: center;
-        color: white;
-        font-size: 20px;
-        font-family: 'Koh Santepheap';
-        font-weight: 300;
-        word-wrap: break-word;
-      "
-    >
-      Employment
-    </div>
-    <div
-      class="HealthCare"
-      onclick="window.location.href = 'Healthcare.html'"
-      style="
-        left: 1150px;
-        top: 163px;
-        position: absolute;
-        text-align: center;
-        color: white;
-        font-size: 20px;
-        font-family: 'Koh Santepheap';
-        font-weight: 300;
-        word-wrap: break-word;
-      "
-    >
-      Health Care
-    </div>
-    <div
-      class="Calendar"
-      onclick="window.location.href = 'calendar.html'"
-      style="
-        left: 1150px;
-        top: 196px;
-        position: absolute;
-        text-align: center;
-        color: white;
-        font-size: 20px;
-        font-family: 'Koh Santepheap';
-        font-weight: 300;
+        flex: 1;
+        color: black;
+        font-size: 32px;
+        font-family: 'Kulim Park';
+        font-weight: 400;
         word-wrap: break-word;
       "
     >
       Calendar
     </div>
+    <div class="header-column" style="flex: 1; z-index: 1050">
+      <div class="row">
+        <input
+          type="text"
+          id="input-box"
+          placeholder="Search..."
+          autocomplete="off"
+          style="
+            height: 40px;
+            width: 400px;
+            padding: 0 10px;
+            font-size: 16px;
+            border: none;
+          "
+        />
+      </div>
+      <div
+        class="result-box"
+        style="
+          z-index: 1050;
+          max-height: 200px;
+          overflow-y: auto;
+          background-color: #fff;
+          padding: 10px;
+        "
+      >
+        <style>
+          .result-box ul {
+            border-top: 1px solid #ffff;
+            padding: 10px;
+            margin: 0;
+            list-style-type: none;
+          }
+        </style>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="bannerSection">
+  <img
+    class="MainPageImg"
+    style="width: 100%; height: 81vh"
+    src="img/SacBackrgound2.webp"
+  />
+</div>
+
+<!-- Visual Divider -->
+<div
+  class="Divider"
+  style="
+    width: 100%;
+    height: 106px;
+    background: linear-gradient(
+      90deg,
+      #002009 0%,
+      #105624 30%,
+      #228f41 62%,
+      #32c75c 93%
+    );
+  "
+></div>
+
+<div class="row" style="padding: 3vh 0">
+  <div class="col-md-6" style="padding: 0 10vw">
+    <img
+      src="img/Shelter.jpg"
+      style="
+        width: 20vw; /* Adjusted to use full column width */
+        height: 206px;
+        display: block; /* Ensures no extra space on sides */
+        margin: 0 auto 8px auto; /* Centers the image and adds space below */
+      "
+    />
+    <button
+      class="rsc-btn"
+      style="
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        background-color: #00573d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        display: block; /* Aligns the button to center */
+        margin: 0 auto; /* Centers the button horizontally */
+        margin-bottom: 8px; /* Space between button and paragraph */
+      "
+      onclick="window.location.href='Shelter.html'"
+    >
+      SHELTER
+    </button>
+    <p
+      style="
+        text-align: center;
+        width: 100%; /* Full width to align text properly */
+      "
+    >
+      Find available shelters in Sacramento, detailing locations and types of
+      accommodations for homeless individuals. It aims to connect those in need
+      with safe and appropriate shelter options, focusing on providing immediate
+      housing solutions.
+    </p>
+  </div>
+  <div class="col-md-6" style="padding: 0 10vw">
+    <img
+      src="img/Food Bank.jpg"
+      style="
+        width: 20vw; /* Adjusted to use full column width */
+        height: 206px;
+        display: block; /* Ensures no extra space on sides */
+        margin: 0 auto 8px auto; /* Centers the image and adds space below */
+      "
+    />
+    <button
+      class="rsc-btn"
+      style="
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        background-color: #00573d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        display: block; /* Aligns the button to center */
+        margin: 0 auto; /* Centers the button horizontally */
+        margin-bottom: 8px; /* Space between button and paragraph */
+      "
+      onclick="window.location.href='FoodBank.html'"
+    >
+      FOOD BANK
+    </button>
+    <p
+      style="
+        text-align: center;
+        width: 100%; /* Full width to align text properly */
+      "
+    >
+      Information on accessible food banks in Sacramento, detailing locations
+      and operating hours. Here, you can find resources to access nutritious
+      meals and essential groceries if you're facing food insecurity.
+    </p>
   </div>
 </div>
+
+<div class="row" style="padding: 3vh 0">
+  <div class="col-md-6" style="padding: 0 10vw">
+    <img
+      src="img/Employment.webp"
+      style="
+        width: 20vw; /* Adjusted to use full column width */
+        height: 206px;
+        display: block; /* Ensures no extra space on sides */
+        margin: 0 auto 8px auto; /* Centers the image and adds space below */
+      "
+    />
+    <button
+      class="rsc-btn"
+      style="
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        background-color: #00573d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        display: block; /* Aligns the button to center */
+        margin: 0 auto; /* Centers the button horizontally */
+        margin-bottom: 8px; /* Space between button and paragraph */
+      "
+      onclick="window.location.href='Employment.html'"
+    >
+      EMPLOYMENT
+    </button>
+    <p
+      style="
+        text-align: center;
+        width: 100%; /* Full width to align text properly */
+      "
+    >
+      List of job resources and employment services in Sacramento. Information
+      on job openings, career development programs, and support for job seekers
+      to help you secure employment and build a stable future.
+    </p>
+  </div>
+  <div class="col-md-6" style="padding: 0 10vw">
+    <img
+      src="img/Health Care.jpg"
+      style="
+        width: 20vw; /* Adjusted to use full column width */
+        height: 206px;
+        display: block; /* Ensures no extra space on sides */
+        margin: 0 auto 8px auto; /* Centers the image and adds space below */
+      "
+    />
+    <button
+      class="rsc-btn"
+      style="
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        background-color: #00573d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        display: block; /* Aligns the button to center */
+        margin: 0 auto; /* Centers the button horizontally */
+        margin-bottom: 8px; /* Space between button and paragraph */
+      "
+      onclick="window.location.href='HealthCare.html'"
+    >
+      HEALTHCARE
+    </button>
+    <p
+      style="
+        text-align: center;
+        width: 100%; /* Full width to align text properly */
+      "
+    >
+      Information on accessible healthcare services in Sacramento, including
+      clinics and hospitals. Find resources for medical care, mental health
+      support, and other health-related services to ensure your well-being.
+    </p>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer style="background-color: #292929">
+  <div
+    class="footer-container"
+    style="display: flex; justify-content: space-between; padding: 20px"
+  >
+    <div
+      class="footer-column"
+      style="
+        flex: 0; /* Each column takes equal space */
+        margin-left: 1vw; /* Add some padding around the columns */
+      "
+    >
+      <img
+        class="CcEmbelm"
+        style="width: 130px; height: 134.61px"
+        src="img/SCCLogo.PNG"
+        onclick="window.location.href='#'"
+      />
+    </div>
+    <div
+      class="footer-column"
+      style="
+        text-align: center;
+        color: white;
+        font-size: 100px;
+        font-family: 'Koh Santepheap';
+        font-weight: 700;
+        word-wrap: break-word;
+        flex: 1; /* Each column takes equal space */
+      "
+      onclick="window.location.href='#'"
+    >
+      Community Compass
+    </div>
+    <div
+      class="footer-column"
+      style="
+        flex: 0.5;
+        display: flex; /* Enables flexbox layout */
+        flex-direction: column; /* Stacks children vertically */
+        justify-content: center; /* Centers children vertically */
+        align-items: center; /* Centers children horizontally */
+        height: 100%; /* Takes full height of its container */
+      "
+    >
+      <div
+        class="ContactUs"
+        onclick="window.location.href = 'contact.html'"
+        style="
+          text-align: center;
+          color: white;
+          font-size: 32px;
+          font-family: 'Koh Santepheap';
+          font-weight: 400;
+          word-wrap: break-word;
+          margin: 2vh 0;
+        "
+      >
+        Contact Us
+      </div>
+      <div
+        class="AboutUs"
+        onclick="window.location.href = 'AboutUs.html'"
+        style="
+          text-align: center;
+          color: white;
+          font-size: 32px;
+          font-family: 'Koh Santepheap';
+          font-weight: 400;
+          word-wrap: break-word;
+          margin: 2vh 0;
+        "
+      >
+        About Us
+      </div>
+    </div>
+    <div
+      class="footer-column"
+      style="flex: 0.3; /* Each column takes equal space */"
+    >
+      <div
+        class="Resources"
+        style="
+          text-align: center;
+          color: white;
+          font-size: 32px;
+          font-family: 'Koh Santepheap';
+          font-weight: 400;
+          word-wrap: break-word;
+        "
+      >
+        Resources
+      </div>
+      <div
+        class="FoodBank"
+        onclick="window.location.href = 'FoodBank.html'"
+        style="
+          text-align: center;
+          color: white;
+          font-size: 20px;
+          font-family: 'Koh Santepheap';
+          font-weight: 300;
+          word-wrap: break-word;
+        "
+      >
+        Food Bank
+      </div>
+      <div
+        class="Shelter"
+        onclick="window.location.href = 'Shelter.html'"
+        style="
+          text-align: center;
+          color: white;
+          font-size: 20px;
+          font-family: 'Koh Santepheap';
+          font-weight: 300;
+          word-wrap: break-word;
+        "
+      >
+        Shelter
+      </div>
+      <div
+        class="Employment"
+        onclick="window.location.href = 'Employment.html'"
+        style="
+          text-align: center;
+          color: white;
+          font-size: 20px;
+          font-family: 'Koh Santepheap';
+          font-weight: 300;
+          word-wrap: break-word;
+        "
+      >
+        Employment
+      </div>
+      <div
+        class="HealthCare"
+        onclick="window.location.href = 'Healthcare.html'"
+        style="
+          text-align: center;
+          color: white;
+          font-size: 20px;
+          font-family: 'Koh Santepheap';
+          font-weight: 300;
+          word-wrap: break-word;
+        "
+      >
+        Health Care
+      </div>
+      <div
+        class="Calendar"
+        onclick="window.location.href = 'calendar.html'"
+        style="
+          text-align: center;
+          color: white;
+          font-size: 20px;
+          font-family: 'Koh Santepheap';
+          font-weight: 300;
+          word-wrap: break-word;
+        "
+      >
+        Calendar
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/script.js"></script>
