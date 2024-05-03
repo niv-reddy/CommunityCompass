@@ -8,19 +8,22 @@ import java.time.format.DateTimeFormatter;
 
 //Requires a  jdbc driver and Org.Json
 
-public class Main {
+public class ServiceRanker {
     /*
     (1) - First line of service_filter_input.txt contains service type to be filtered. - shelter, employment, event, food
-    (2) - Second Line specifies whether services must be open now. If true then set to 'opennow', otherwise 'anytime'.
-    (3) - Third and following lines contain filter types and filter value seperated by a comma e.g:
+    (2) - Second line of input file must contain the user location.
+    (3) - Third Line specifies whether services must be open now. If true then set to 'opennow', otherwise 'anytime'.
+    (4) - Fourth and following lines contain filter types and filter value seperated by a comma e.g:
 
         shelter
+        2500 American River Drive, Sacramento, California, USA
         opennow
         filter,1
 
         ALTERNATIVELY AS AN EXAMPLE:
 
         employment
+        6000 J St, Sacramento, CA 95819
         anytime
         filter,0
 
@@ -75,49 +78,26 @@ public class Main {
         }
     }
 
-    //Reads first line of service_filters.txt and returns service type:
-    private static String get_service_type() {
-        String service_type = null;
+    //Transfers input file to string list, each entry is a line of the input file:
+    private static ArrayList<String> load_input_file() {
+        ArrayList<String> input_file = new ArrayList<String>();
         try(BufferedReader br = new BufferedReader(new FileReader(service_filter_input_file))) {
-            service_type = br.readLine();
-        } catch (IOException e) {
-            System.out.println("Error reading service_filter_input.txt");
-        }
-        return service_type;
-    }
-
-    //Reads second line of service_filters.txt and returns whether service must be open now:
-    private static boolean get_open_now() {
-        boolean open_now = false;
-        try(BufferedReader br = new BufferedReader(new FileReader(service_filter_input_file))) {
-
-            //Skipping first line:
-            br.readLine();
-
-            open_now = br.readLine().equals("opennow");
-        } catch (IOException e) {
-            System.out.println("Error reading service_filter_input.txt");
-        }
-        return open_now;
-    }
-
-    //Reads lines 3 until last-line of service_filter_input.txt and returns filters with associated values:
-    private static ArrayList<ServiceFilter> get_filters() {
-        ArrayList<ServiceFilter> filters = new ArrayList<ServiceFilter>();
-        try(BufferedReader br = new BufferedReader(new FileReader(service_filter_input_file))) {
-
-            //Skipping first two lines
-            br.readLine();
-            br.readLine();
-
             String line;
-            while ((line = br.readLine()) != null) {
-                String[] filter_and_val = line.split(",", 2);
-                filters.add(new ServiceFilter(filter_and_val[0], Boolean.parseBoolean(filter_and_val[1])));
+            while((line = br.readLine()) != null) {
+                input_file.add(line);
             }
         } catch (IOException e) {
             System.out.println("Error reading service_filter_input.txt");
-            e.printStackTrace();
+        }
+        return input_file;
+    }
+
+    //Reads lines 4 until last-line of input file and returns filters with associated values:
+    private static ArrayList<ServiceFilter> get_filters(ArrayList<String> input_file) {
+        ArrayList<ServiceFilter> filters = new ArrayList<ServiceFilter>();
+        for(int i = 3; i < input_file.size(); i++) {
+            String[] filter_and_val = input_file.get(i).split(",", 2);
+            filters.add(new ServiceFilter(filter_and_val[0], (Objects.equals(filter_and_val[1], "1")) ));
         }
         return filters;
     }
@@ -137,29 +117,32 @@ public class Main {
             String password  =   "4fbgM2Vt2F";
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + service_type);
+            ResultSet result_set = statement.executeQuery("SELECT * FROM " + service_type);
 
             // Compare services to filters and append to list if valid:
-            while (resultSet.next()) {
+            while (result_set.next()) {
 
                 boolean is_valid = true;
 
                 //Filtering by opening time and closing time relative to current time:
                 if(open_now) {
+                    String opening_time = result_set.getString("opening");
+                    String closing_time = result_set.getString("closing");
 
-                    //Getting opening and closing time in HH:MM:SS format:
-                    LocalTime opening_time = LocalTime.parse(resultSet.getString("opening"));
-                    LocalTime closing_time = LocalTime.parse(resultSet.getString("closing"));
+                    if(opening_time != null && closing_time != null) {
+                        LocalTime ot = LocalTime.parse(opening_time);
+                        LocalTime ct = LocalTime.parse(closing_time);
 
-                    //Checking whether current time falls withing opening and closing window:
-                    LocalTime current_time = LocalTime.now();
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-                    is_valid &= current_time.isAfter(opening_time) && current_time.isBefore(closing_time);
+                        //Checking whether current time falls withing opening and closing window:
+                        LocalTime current_time = LocalTime.now();
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        is_valid &= current_time.isAfter(ot) && current_time.isBefore(ct);
+                    }
                 }
 
                 //Filtering by properties:
                 for(ServiceFilter f: filters) {
-                    int service_attribute_value = resultSet.getInt(f.filter_label);
+                    int service_attribute_value = result_set.getInt(f.filter_label);
 
                     //If user filter is set to 1 then service attribute must also be 1:
                     is_valid &= !f.value || (service_attribute_value == 1);
@@ -171,17 +154,17 @@ public class Main {
 
                     //Setting properties of service:
                     int index = valid_services.size() - 1;
-                    valid_services.get(index).name          = resultSet.getString("name");
-                    valid_services.get(index).location      = resultSet.getString("location");
-                    valid_services.get(index).description   = resultSet.getString("description");
-                    valid_services.get(index).phone         = resultSet.getString("phone");
-                    valid_services.get(index).opening_time  = resultSet.getString("opening");
-                    valid_services.get(index).closing_time  = resultSet.getString("closing");
+                    valid_services.get(index).name          = result_set.getString("name");
+                    valid_services.get(index).location      = result_set.getString("location");
+                    valid_services.get(index).description   = result_set.getString("description");
+                    valid_services.get(index).phone         = result_set.getString("phone");
+                    valid_services.get(index).opening_time  = result_set.getString("opening");
+                    valid_services.get(index).closing_time  = result_set.getString("closing");
                 }
             }
 
             //Close connection:
-            resultSet.close();
+            result_set.close();
             statement.close();
             connection.close();
         } catch (Exception e) {
@@ -191,54 +174,55 @@ public class Main {
     }
 
     // Calculates distance of each service relative to user using the Google Maps API
-    private static ArrayList<Service> get_service_distance_from_user(ArrayList<Service> services, String user_location) {
-        try {
+    private static void get_service_distance_from_user(ArrayList<Service> services, String user_location) {
+        if(!services.isEmpty()) {
+            try {
 
-            // Construct API request URL
-            String destinations = "";
-            for (Service s : services) {
-                destinations += URLEncoder.encode(s.location, "UTF-8") + '|';
+                // Construct API request URL
+                String destinations = "";
+                for (Service s : services) {
+                    destinations += URLEncoder.encode(s.location, "UTF-8") + '|';
+                }
+
+                //Remove extraneous '|':
+                destinations = destinations.substring(0, destinations.length() - 1);
+                user_location = URLEncoder.encode(user_location, "UTF-8");
+                String unit = "imperial";
+                String api_key = "AIzaSyAmjnQQ3pDlKtbmuNqZKQBYTJE3wbgG2RA";
+
+                String url_string = "https://maps.googleapis.com/maps/api/distancematrix/json" +
+                        "?destinations=" + destinations +
+                        "&origins=" + user_location +
+                        "&units=" + unit +
+                        "&key=" + api_key;
+                URL url = new URL(url_string);
+
+                // Create connection with Google Distance Matrix API:
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+
+                //Loading response from API:
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String response = "";
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    response += line;
+                }
+                reader.close();
+
+                //Parsing JSON response and loading distance metric into service list:
+                load_distance_into_service_list(services, response);
+
+                // Closing Distance Matrix API connection:
+                connection.disconnect();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-            //Remove extraneous '|':
-            destinations = destinations.substring(0, destinations.length() - 1);
-            user_location = URLEncoder.encode(user_location, "UTF-8");
-            String unit = "imperial";
-            String api_key = "AIzaSyAmjnQQ3pDlKtbmuNqZKQBYTJE3wbgG2RA";
-
-            String url_string = "https://maps.googleapis.com/maps/api/distancematrix/json" +
-                                "?destinations="    + destinations  +
-                                "&origins="         + user_location +
-                                "&units="           + unit          +
-                                "&key="             + api_key;
-            URL url = new URL(url_string);
-
-            // Create connection with Google Distance Matrix API:
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
-
-            //Loading response from API:
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String response = "";
-            String line;
-            while ((line = reader.readLine()) != null) {
-                response += line;
-            }
-            reader.close();
-
-            //Parsing JSON response and loading distance metric into service list:
-           load_distance_into_service_list(services, response);
-
-            // Closing Distance Matrix API connection:
-            connection.disconnect();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        return services;
     }
 
     //Parses JSON response and loads distance metric into service list:
-    private static ArrayList<Service> load_distance_into_service_list(ArrayList<Service> services, String response) {
+    private static void load_distance_into_service_list(ArrayList<Service> services, String response) {
         JSONObject json_response = new JSONObject(response);
         JSONArray json_rows = json_response.getJSONArray("rows");
         JSONArray json_elements = json_rows.getJSONObject(0).getJSONArray("elements");
@@ -253,7 +237,6 @@ public class Main {
             distance = distance.substring(0, distance.length() - 3);
             services.get(i).distance_from_user_in_miles = distance;
         }
-        return services;
     }
 
     private static void write_ranked_service_list_to_output(ArrayList<Service> services) {
@@ -276,20 +259,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Specifying service type to be filtered
-        String service_type = get_service_type();
-
-        //Specifying whether returned services must be open now:
-        boolean open_now = get_open_now();
-
-        //Specifying filters
-        ArrayList<ServiceFilter> filters = get_filters();
+        //Loading user generated info in input file:
+        ArrayList<String> input_file        = load_input_file();
+        String service_type                 = input_file.get(0);
+        String user_location                = input_file.get(1);
+        boolean open_now                    = input_file.get(2).equals("opennow");
+        ArrayList<ServiceFilter> filters    = get_filters(input_file);
 
         //Generating an unsorted list of services that match user filters:
         ArrayList<Service> services = get_valid_services(filters, service_type, open_now);
 
         //Calculating distance between user and services:
-        String user_location = "2500 American River Drive, Sacramento, California, USA";
         get_service_distance_from_user(services, user_location);
 
         //Sorting service list by distance relative to user:
