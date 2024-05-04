@@ -169,7 +169,6 @@ public class ServiceRank {
         String json_response = "";
         try {
 
-            //THIS CODE SECTION IS COPIED FROM THE INTERNET
             String mac_address = get_mac_address();
             String url = "https://www.googleapis.com/geolocation/v1/geolocate?key=" + api_key;
             String postData = "{\"wifiAccessPoints\":[{\"macAddress\":\"" + mac_address + "\"}]}";
