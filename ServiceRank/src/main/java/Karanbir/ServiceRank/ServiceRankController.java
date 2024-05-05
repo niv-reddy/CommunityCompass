@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController()
+@CrossOrigin(origins = "http://localhost:3000")
 public class ServiceRankController {
 
     @PostMapping
