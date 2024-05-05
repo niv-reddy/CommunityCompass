@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "6633e9a8e30f8ae95206b272"
+  },
+  "title": "Shelter Support Meeting",
+  "start": "2024-06-01",
+  "color": "#008000"
+},
+{
+  "_id": {
+    "$oid": "6633e9a8e30f8ae95206b273"
+  },
+  "title": "Tech Job Fair",
+  "start": "2024-06-05",
+  "color": "#0000FF"
+},
+{
+  "_id": {
+    "$oid": "6633e9a8e30f8ae95206b274"
+  },
+  "title": "Community Food Giveaway",
+  "start": "2024-06-10",
+  "color": "#FF0000"
+},
+{
+  "_id": {
+    "$oid": "6633e9a8e30f8ae95206b275"
+  },
+  "title": "Homeless Shelter Volunteer Day",
+  "start": "2024-06-15",
+  "color": "#008000"
+},
+{
+  "_id": {
+    "$oid": "6633e9a8e30f8ae95206b276"
+  },
+  "title": "Annual Career Expo",
+  "start": "2024-06-20",
+  "color": "#0000FF"
+}]
